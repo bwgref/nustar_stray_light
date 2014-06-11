@@ -245,9 +245,9 @@ END
 ;; smooth>1 -- take this smooth factor
 
 
-pro nuplan, pnt_ra, pnt_dec, pa=pnt_pa , stray_catalog=stray_catalog, oa=oa, oaa=oaa, oab=oab, smooth=smooth, $
+pro nustar_stray_light, pnt_ra, pnt_dec, pa=pnt_pa , stray_catalog=stray_catalog, oa=oa, oaa=oaa, oab=oab, smooth=smooth, $
             silent=silent, quit=quit, target_catalog=target_catalog, scan_step=scan_step, badpix=badpix, $
-            key=key,slp_level=slp_level, fmin=fmin
+            key=key,slp_level=slp_level, fmin=fmin, do_scan = do_scan
 common nuplan, nu, status, sources, target
 forward_function read_combined_catalog
 
@@ -257,7 +257,7 @@ forward_function read_combined_catalog
   if(n_elements(oa) eq 0) then oa=[3., 3.] ; "default" position of OA in mm, will be converted to crpix WCS keyword
   if(n_elements(oaa) eq 0) then oaa=[3., 3.] 
   if(n_elements(oab) eq 0) then oab=[3., 3.] 
-  if(n_elements(scan_step) eq 0) then scan_step=10.
+  if(n_elements(scan_step) eq 0) then scan_step=5.
   if(n_elements(silent) eq 0) then silent=0
   if(n_elements(quit) eq 0) then quit=0
   if n_elements(fmin) eq 0 then fmin = 5. ; default to 5 mCrab 
@@ -307,12 +307,15 @@ for xx = 0, n_detx-1 do begin
    endfor
 endfor
 
-print,'Saving [x,y]dim_mm.fits'
-writefits, 'xdim_mm.fits',xpos_2d_array
-writefits, 'ydim_mm.fits',ypos_2d_array
+;; print,'Saving [x,y]dim_mm.fits'
+;; writefits, 'xdim_mm.fits',xpos_2d_array
+;; writefits, 'ydim_mm.fits',ypos_2d_array
 
 
-status={ra:pnt_ra, dec:pnt_dec, ra_orig:pnt_ra, dec_orig:pnt_dec, pa:pnt_pa,slpa:0,slpb:0,eff:0,vis:0,winid:0,mainid:0,infoid:0,TopTab:0,table:0,infotext:0,silent:silent,scan_step:scan_step, key:key, smooth:smooth}
+status={ra:pnt_ra, dec:pnt_dec, ra_orig:pnt_ra, dec_orig:pnt_dec, pa:pnt_pa,$
+        slpa:0,slpb:0,eff:0,vis:0,winid:0,mainid:0,infoid:0,TopTab:0,table:0,$
+        infotext:0,silent:silent,scan_step:scan_step, key:key, smooth:smooth, $
+       loss0:0., loss1:0.}
 nu={hgap:hgap,n_detx:n_detx,n_dety:n_dety,xpos_array:xpos_array,ypos_array:ypos_array,oa:oa,oaa:oaa,oab:oab,oa_prev:oa,fov_shift_x:0.0D,fov_shift_y:0.0D,fov_shift_step:0.5D,dr:!PI/180.,rd:180./!PI}
 
 ; Read in the combined BAT 70 Month and INTEGRAL galactic plane survey catalogs
@@ -324,114 +327,145 @@ read_combined_catalog, ra=pnt_ra, dec=pnt_dec, src_name, src_ra, src_dec, src_fl
 ;; endif
 sources={src_name:src_name,src_ra:src_ra,src_dec:src_dec,src_flux:src_flux,src_flag:src_flag}
 
-main = widget_base (title='NuPLAN', /column, xsize=1024, ysize=690)             ; main base
-wTab = WIDGET_TAB(main, LOCATION=location)
-status.TopTab=wTab
-wT1 = WIDGET_BASE(wTab, TITLE='Stray light pattern', uvalue='tab1', /COLUMN) 
+;; main = widget_base (title='NuPLAN', /column, xsize=1024, ysize=690)             ; main base
+;; wTab = WIDGET_TAB(main, LOCATION=location)
+;; status.TopTab=wTab
+;; wT1 = WIDGET_BASE(wTab, TITLE='Stray light pattern', uvalue='tab1', /COLUMN) 
 
-cntl = widget_base (wT1, /row, /frame)  
-draw = widget_draw (wT1, uvalue='draw', /button, xsize=1024, ysize=500)               ; graphics pane
-btn1 = widget_button (cntl, uvalue='quit', value='Quit')             ; quit button
-wLabel_status = WIDGET_LABEL(cntl, uname='infotext', /ALIGN_LEFT, $
-                             VALUE='                                                          ') 
-status.infotext=wLabel_status
+;; cntl = widget_base (wT1, /row, /frame)  
+;; draw = widget_draw (wT1, uvalue='draw', /button, xsize=1024, ysize=500)               ; graphics pane
+;; btn1 = widget_button (cntl, uvalue='quit', value='Quit')             ; quit button
+;; wLabel_status = WIDGET_LABEL(cntl, uname='infotext', /ALIGN_LEFT, $
+;;                              VALUE='                                                          ') 
+;; status.infotext=wLabel_status
 
-wLabel_info = WIDGET_LABEL(cntl, VALUE='') 
-status.infoid=wLabel_info
-;btn_request = widget_button (cntl, uvalue='RequestPA', value='Request PA')             ; quit button
-cntl2=widget_base(wT1, /row, /frame)
+;; wLabel_info = WIDGET_LABEL(cntl, VALUE='') 
+;; status.infoid=wLabel_info
+;; ;btn_request = widget_button (cntl, uvalue='RequestPA', value='Request PA')             ; quit button
+;; cntl2=widget_base(wT1, /row, /frame)
 
-cntl_pos=widget_base(cntl2, /column, /frame)
-cntl_pos1=widget_base(cntl_pos, /row)
-cntl_pos2=widget_base(cntl_pos, /row)
+;; cntl_pos=widget_base(cntl2, /column, /frame)
+;; cntl_pos1=widget_base(cntl_pos, /row)
+;; cntl_pos2=widget_base(cntl_pos, /row)
 
-wLabel_pos = WIDGET_LABEL(cntl_pos1, VALUE="OA J2000 position (RA,Dec):") 
-input_ra = widget_text (cntl_pos2, uname='input_ra', value=cgNumber_Formatter(status.ra,Decimals=4), uval='ra',/NO_NEWLINE,/EDITABLE, xsize=8) 
-input_dec = widget_text (cntl_pos2, uname='input_dec', value=cgNumber_Formatter(status.dec,Decimals=4), uval='dec',/NO_NEWLINE,/EDITABLE, xsize=8) 
+;; wLabel_pos = WIDGET_LABEL(cntl_pos1, VALUE="OA J2000 position (RA,Dec):") 
+;; input_ra = widget_text (cntl_pos2, uname='input_ra', value=cgNumber_Formatter(status.ra,Decimals=4), uval='ra',/NO_NEWLINE,/EDITABLE, xsize=8) 
+;; input_dec = widget_text (cntl_pos2, uname='input_dec', value=cgNumber_Formatter(status.dec,Decimals=4), uval='dec',/NO_NEWLINE,/EDITABLE, xsize=8) 
 
-;; cntl_oa=widget_base(cntl2, /column, /frame)
-;; cntl_oa1=widget_base(cntl_oa, /row)
-;; cntl_oa2=widget_base(cntl_oa, /row)
+;; ;; cntl_oa=widget_base(cntl2, /column, /frame)
+;; ;; cntl_oa1=widget_base(cntl_oa, /row)
+;; ;; cntl_oa2=widget_base(cntl_oa, /row)
 
-;; wLabel_oa = WIDGET_LABEL(cntl_oa1, VALUE="OA det. position in mm:") 
-;; input_ra = widget_text (cntl_oa2, uname='input_oax', value=Number_Formatter(nu.oa[0]), uval='oax',/NO_NEWLINE,/EDITABLE, xsize=6) 
-;; input_dec = widget_text (cntl_oa2, uname='input_oay', value=Number_Formatter(nu.oa[1]), uval='oay',/NO_NEWLINE,/EDITABLE, xsize=6) 
+;; ;; wLabel_oa = WIDGET_LABEL(cntl_oa1, VALUE="OA det. position in mm:") 
+;; ;; input_ra = widget_text (cntl_oa2, uname='input_oax', value=Number_Formatter(nu.oa[0]), uval='oax',/NO_NEWLINE,/EDITABLE, xsize=6) 
+;; ;; input_dec = widget_text (cntl_oa2, uname='input_oay', value=Number_Formatter(nu.oa[1]), uval='oay',/NO_NEWLINE,/EDITABLE, xsize=6) 
 
 
 
-cntl_fov=widget_base(cntl2, /column, /frame)
-cntl_fov1=widget_base(cntl_fov, /row)
-cntl_fov2=widget_base(cntl_fov, /row)
-cntl_fov3=widget_base(cntl_fov, /row)
+;; cntl_fov=widget_base(cntl2, /column, /frame)
+;; cntl_fov1=widget_base(cntl_fov, /row)
+;; cntl_fov2=widget_base(cntl_fov, /row)
+;; cntl_fov3=widget_base(cntl_fov, /row)
 
-btn_up1 = widget_button (cntl_fov1, uvalue='upl',    value='        ')
-btn_up  = widget_button (cntl_fov1, uvalue='up',     value='   Up   ')
-btn_up2 = widget_button (cntl_fov1, uvalue='upr',    value='        ')
+;; btn_up1 = widget_button (cntl_fov1, uvalue='upl',    value='        ')
+;; btn_up  = widget_button (cntl_fov1, uvalue='up',     value='   Up   ')
+;; btn_up2 = widget_button (cntl_fov1, uvalue='upr',    value='        ')
 
-btn_md1 = widget_button (cntl_fov2, uvalue='left',   value='  Left  ')
-btn_md  = widget_button (cntl_fov2, uvalue='center', value='  Reset ')
-btn_md2 = widget_button (cntl_fov2, uvalue='right',  value='  Right ')
+;; btn_md1 = widget_button (cntl_fov2, uvalue='left',   value='  Left  ')
+;; btn_md  = widget_button (cntl_fov2, uvalue='center', value='  Reset ')
+;; btn_md2 = widget_button (cntl_fov2, uvalue='right',  value='  Right ')
 
-btn_bm1 = widget_button (cntl_fov3, uvalue='downl',  value='        ')
-btn_bm  = widget_button (cntl_fov3, uvalue='down',   value='  Down  ')
-btn_bm2 = widget_button (cntl_fov3, uvalue='downr',  value='        ')
+;; btn_bm1 = widget_button (cntl_fov3, uvalue='downl',  value='        ')
+;; btn_bm  = widget_button (cntl_fov3, uvalue='down',   value='  Down  ')
+;; btn_bm2 = widget_button (cntl_fov3, uvalue='downr',  value='        ')
 
-cntl_pa=widget_base(cntl2, /column, /frame)
-cntl_pa1=widget_base(cntl_pa, /row)
-cntl_pa2=widget_base(cntl_pa, /row)
+;; cntl_pa=widget_base(cntl2, /column, /frame)
+;; cntl_pa1=widget_base(cntl_pa, /row)
+;; cntl_pa2=widget_base(cntl_pa, /row)
 
-sld = widget_slider (cntl_pa2, min=0, max=360, value=status.pa, uval='pa', SCR_XSIZE=450)     ; slider 
-btn2 = widget_button (cntl_pa2, uvalue='shoot', value='Shoot')             ; shoot button
-btn3 = widget_button (cntl_pa2, uvalue='scan', value='Scan')             ; scan button
-wLabel_sld = WIDGET_LABEL(cntl_pa1, VALUE="Positional Angle (PA)") 
+;; sld = widget_slider (cntl_pa2, min=0, max=360, value=status.pa, uval='pa', SCR_XSIZE=450)     ; slider 
+;; btn2 = widget_button (cntl_pa2, uvalue='shoot', value='Shoot')             ; shoot button
+;; btn3 = widget_button (cntl_pa2, uvalue='scan', value='Scan')             ; scan button
+;; wLabel_sld = WIDGET_LABEL(cntl_pa1, VALUE="Positional Angle (PA)") 
 
-wT2 = WIDGET_BASE(wTab, TITLE='Source catalog', uvalue='tab2', /COLUMN) 
+;; wT2 = WIDGET_BASE(wTab, TITLE='Source catalog', uvalue='tab2', /COLUMN) 
   
-  ;wSlider = WIDGET_SLIDER(wT2) 
+;;   ;wSlider = WIDGET_SLIDER(wT2) 
 
-  col_labels = ['Source', 'R.A.', 'Dec.', 'Flux (mCrab)','Flag'] 
-  row_labels = [STRING(1,FORMAT='(i)')] 
+;; col_labels = ['Source', 'R.A.', 'Dec.', 'Flux (mCrab)','Flag'] 
+;; row_labels = [STRING(1,FORMAT='(i)')] 
 
-  d={name:src_name[0],ra:src_ra[0],dec:src_dec[0],flux:src_flux[0],flag:src_flag[0]}
-  data=[d]
-  n_src=n_elements(src_name)
-  for i=1,n_src-1 do begin
-     d={source:src_name[i],ra:src_ra[i],dec:src_dec[i],flux:src_flux[i],flag:src_flag[i]}
-     data=[data,d]
-     row_labels=[row_labels,STRING(i+1,FORMAT='(i)')]
-  endfor
+;; d={name:src_name[0],ra:src_ra[0],dec:src_dec[0],flux:src_flux[0],flag:src_flag[0]}
+;; data=[d]
+;; n_src=n_elements(src_name)
+;; for i=1,n_src-1 do begin
+;;    d={source:src_name[i],ra:src_ra[i],dec:src_dec[i],flux:src_flux[i],flag:src_flag[i]}
+;;    data=[data,d]
+;;    row_labels=[row_labels,STRING(i+1,FORMAT='(i)')]
+;; endfor
 
 
-  ; Combine structure data into a vector of structures. 
-  ;data = [d1,d2]
+;;   ; Combine structure data into a vector of structures. 
+;;   ;data = [d1,d2]
 
-  ; To make sure the table looks nice on all platforms, 
-  ; set all column widths to the width of the longest string 
-  ; that can be a header. 
-  maxw=dblarr(4)
-  max_strlen = strlen('  IGR J16283-4838  ') 
-  maxwidth = max_strlen * !d.x_ch_size + 6   ; ... + 6 for padding 
-  maxw[0]=maxwidth
-  max_strlen = strlen('J16283-4838') 
-  maxwidth = max_strlen * !d.x_ch_size + 6   ; ... + 6 for padding 
-  maxw[1:3]=maxwidth
-  
-  table1 = WIDGET_TABLE(wT2, VALUE=data, /ROW_MAJOR, /ALL_EVENTS, $ 
-    ROW_LABELS=row_labels, COLUMN_LABELS=col_labels, /editable, $ 
-    COLUMN_WIDTHS=maxw, /RESIZEABLE_COLUMNS) 
-  status.table=table1
-wLabel = WIDGET_LABEL(wT2, VALUE="Don't forget to release cell after editing (e.g. by typing return button)") 
-widget_control, main, /realize 
-widget_control, draw, get_value=win_id ;get the window id
-status.winid=win_id
-status.mainid=main
+;;   ; To make sure the table looks nice on all platforms, 
+;;   ; set all column widths to the width of the longest string 
+;;   ; that can be a header. 
+;; maxw=dblarr(4)
+;; max_strlen = strlen('  IGR J16283-4838  ') 
+;; maxwidth = max_strlen * !d.x_ch_size + 6 ; ... + 6 for padding 
+;; maxw[0]=maxwidth
+;; max_strlen = strlen('J16283-4838') 
+;; maxwidth = max_strlen * !d.x_ch_size + 6 ; ... + 6 for padding 
+;; maxw[1:3]=maxwidth
 
-stray_light_render, badpix=badpix
+;; table1 = WIDGET_TABLE(wT2, VALUE=data, /ROW_MAJOR, /ALL_EVENTS, $ 
+;;                       ROW_LABELS=row_labels, COLUMN_LABELS=col_labels, /editable, $ 
+;;                       COLUMN_WIDTHS=maxw, /RESIZEABLE_COLUMNS) 
+;; status.table=table1
+;; wLabel = WIDGET_LABEL(wT2, VALUE="Don't forget to release cell after editing (e.g. by typing return button)") 
+;; widget_control, main, /realize 
+;; widget_control, draw, get_value=win_id ;get the window id
+;; status.winid=win_id
+;; status.mainid=main
 
-if(quit eq 1) then begin
-   widget_control, main, /destroy
-   return
-endif
 
-xmanager, 'nuplan', main, /no_block                         ; wait for events
+if ~keyword_set(do_scan) then begin
+   stray_light_render, badpix=badpix
+endif else begin
+
+   print,'Running PA scan 0,360,5 deg'
+   openw, lun,  'pa_scan.dat', /get_lun
+                                ; save source list used in this run
+   for ii=0, n_elements(sources.src_name)-1 do printf,lun,'# ',$
+      sources.src_name(ii),',',sources.src_ra(ii),', ',sources.src_dec(ii),',',sources.src_flag(ii)
+   save_pa=status.pa
+   save_silent=status.silent
+   status.silent=1
+
+   setps
+   printf, lun, 'PA FPMA_LOSS FPMB_LOSS FPMA_DET0_LOSS FPMB_DET0_LOSS'
+   for s=0.0,360.0,status.scan_step do begin
+      status.pa=s
+      stray_light_render
+;      print, status.pa, status.slpa, status.slpb, status.loss0, status.loss1,format='(5f8.2)'
+      printf,lun, status.pa, status.slpa, status.slpb, status.loss0, status.loss1,format='(5f8.2)'
+
+   endfor
+   close, lun
+   free_lun, lun
+   endps
+   spawn, 'mv idlout.pdf scan.pdf'
+   status.pa=save_pa
+   status.silent=save_silent
+endelse
+
+
+
+;; if(quit eq 1) then begin
+;;    widget_control, main, /destroy
+;;    return
+;; endif
+
+;; xmanager, 'nuplan', main, /no_block                         ; wait for events
 end

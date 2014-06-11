@@ -267,19 +267,21 @@ pro stray_light_render, badpix=badpix
   if(count gt 0) then vis=count*100.0/64.^2
 
   eff=(100-fp1_pct)+(100-fp2_pct)
-  Label = widget_info(status.mainid, find_by_uname='infotext') 
-  widget_control,Label,set_value= $
-                 'Efficiency: '+cgNumber_Formatter(eff,Decimals=1)+ $
-                 '% Visibility: '+cgNumber_Formatter(vis,Decimals=1)+ '%'
+  ;; Label = widget_info(status.mainid, find_by_uname='infotext') 
+  ;; widget_control,Label,set_value= $
+  ;;                'Efficiency: '+cgNumber_Formatter(eff,Decimals=1)+ $
+  ;;                '% Visibility: '+cgNumber_Formatter(vis,Decimals=1)+ '%'
   status.vis=vis
   status.eff=eff
   status.slpa=fp1_pct
   status.slpb=fp2_pct
+  status.loss0=fp1chip0_pct
+  status.loss1=fp2chip0_pct
 
   !p.multi=[0,2,1]
-  !p.charsize=1.8
+  !p.charsize=1.25
   bb=20.0
-  contour, dmask_fp1, nu.xpos_array, nu.ypos_array, /cell_fill, xtit='DETX [mm]', ytit='DETY [mm]', $
+  contour, /iso, dmask_fp1, nu.xpos_array, nu.ypos_array, /cell_fill, xtit='DETX [mm]', ytit='DETY [mm]', $
            tit='FPA ', $
            levels=sources.src_flux[sort(sources.src_flux)] ; (BG) Contour levesl == source fluxes.
                                 ;,levels=[0,1,2,3,4]
@@ -300,9 +302,12 @@ pro stray_light_render, badpix=badpix
                                 ; Convert to mm:
         mm_x = nu.xpos_array[round(labels1_x[ll])]
         mm_y = nu.ypos_array[round(labels1_y[ll])]
-        xyouts, mm_x, mm_y, labels1_name[ll], color = cgColor('Cyan'), /data
+       
+        xyouts, mm_x, mm_y, labels1_name[ll], color = cgColor('Red'), /data
      endfor
   endif
+  xyouts, /data, 21, 21, 'PA Angle '+string(pa, format = '(i0)')
+
 
 
 
@@ -330,7 +335,7 @@ pro stray_light_render, badpix=badpix
      xyouts, ptx[n]+3.0 , pty[n], String(off[n],format='(f3.1)')+"'", CHARSIZE=0.9, color=green
   endfor
 
-  contour, dmask_fp2, nu.xpos_array, nu.ypos_array, /cell_fill, xtit='DETX [mm]', ytit='DETY [mm]', $
+  contour, /iso, dmask_fp2, nu.xpos_array, nu.ypos_array, /cell_fill, xtit='DETX [mm]', ytit='DETY [mm]', $
            tit='FPB ', $
            levels=sources.src_flux[sort(sources.src_flux)] ; (BG) Contour levesl == source fluxes.
                                 ;levels=[0,1,2,3,4]
@@ -352,7 +357,7 @@ pro stray_light_render, badpix=badpix
                                 ; Convert to mm:
         mm_x = nu.xpos_array[round(labels2_x[ll])]
         mm_y = nu.ypos_array[round(labels2_y[ll])]
-        xyouts, mm_x, mm_y, labels2_name[ll], color = cgColor('Cyan'), /data
+        xyouts, mm_x, mm_y, labels2_name[ll], color = cgColor('Red'), /data
      endfor
   endif
 
