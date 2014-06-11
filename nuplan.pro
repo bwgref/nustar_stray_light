@@ -314,17 +314,6 @@ writefits, 'ydim_mm.fits',ypos_2d_array
 
 status={ra:pnt_ra, dec:pnt_dec, ra_orig:pnt_ra, dec_orig:pnt_dec, pa:pnt_pa,slpa:0,slpb:0,eff:0,vis:0,winid:0,mainid:0,infoid:0,TopTab:0,table:0,infotext:0,silent:silent,scan_step:scan_step, key:key, smooth:smooth}
 nu={hgap:hgap,n_detx:n_detx,n_dety:n_dety,xpos_array:xpos_array,ypos_array:ypos_array,oa:oa,oaa:oaa,oab:oab,oa_prev:oa,fov_shift_x:0.0D,fov_shift_y:0.0D,fov_shift_step:0.5D,dr:!PI/180.,rd:180./!PI}
-;hgap = 0.15 ; detector half gap [mm]                                                                                                          
-;n_detx = 64 ; number of detector x bins 
-;n_dety = 64 ; number of detector y bins 
-
-
-;if (slp_level ge 0) then begin
-;   read_integral9, ra=pnt_ra, dec=pnt_dec, src_name, src_ra, src_dec, src_flag, $
-;                   slp_level=slp_level
-;   read_bat70, ra=pnt_ra, dec=pnt_dec, src_name, src_ra, src_dec, src_flag, $
-;                   slp_level=slp_level
-;endif
 
 ; Read in the combined BAT 70 Month and INTEGRAL galactic plane survey catalogs
 read_combined_catalog, ra=pnt_ra, dec=pnt_dec, src_name, src_ra, src_dec, src_flux, src_flag, $
