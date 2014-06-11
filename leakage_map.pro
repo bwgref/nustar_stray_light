@@ -57,22 +57,48 @@ d1mask = fltarr(64,64)
 xpos_array = fltarr(64)
 ypos_array = fltarr(64)
 
-for xx = 0, 63 do begin 
-   for yy = 0, 63 do begin 
-      q_x = sign(xx+1 - 32.5)                                           ;
-      q_y = sign(yy+1 - 32.5) 
+ap1_x = real_part(ap1_shadow/DET2FB)
+ap1_y= imaginary(ap1_shadow/DET2FB)
+bench1_x =  real_part(bench_shadow/DET2FB)
+bench1_y = imaginary(bench_shadow/DET2FB)
+bench2_x =  real_part((bench_shadow-508.)/DET2FB)
+bench2_y =imaginary((bench_shadow-508.)/DET2FB)
+
+
+;; time = systime(1)
+;; for xx = 0, 63 do begin 
+;;    for yy = 0, 63 do begin 
+;; ;      q_x= sign(xx+1 - 32.5)                                           ;
+;; ;      q_y = sign(yy+1 - 32.5) 
       
-      xpos = (xx+1-32.5)*0.6048 + hgap*sign(xx+1-32.5)
-      ypos = (yy+1-32.5)*0.6048 + hgap*sign(yy+1-32.5)
+;;       xpos = (xx+1-32.5)*0.6048 + hgap*sign(xx+1-32.5)
+;;       ypos = (yy+1-32.5)*0.6048 + hgap*sign(yy+1-32.5)
 
-      d0mask(xx,yy) = InsidePolygon(xpos, ypos, real_part(ap1_shadow/DET2FB), imaginary(ap1_shadow/DET2FB)) * (1.-InsidePolygon(xpos, ypos, real_part(bench_shadow/DET2FB), imaginary(bench_shadow/DET2FB)))
- 
-      d1mask(xx,yy) = InsidePolygon(xpos, ypos, real_part(ap1_shadow/DET2FB), imaginary(ap1_shadow/DET2FB)) * (1.-InsidePolygon(xpos, ypos, real_part((bench_shadow-508.)/DET2FB), imaginary((bench_shadow-508.)/DET2FB))) 
+;;       d0mask(xx,yy) = InsidePolygon(xpos, ypos, ap1_x, ap1_y) * (1.-InsidePolygon(xpos, ypos, bench1_x, bench1_y))
+;;       d1mask(xx,yy) = InsidePolygon(xpos, ypos, ap1_x, ap1_y) * (1.-InsidePolygon(xpos, ypos, bench2_x, bench2_y)) 
 
-      xpos_array(xx) = xpos                          
-      ypos_array(yy) = ypos 
-   endfor
-endfor
+;; ;      xpos_array(xx) = xpos                          
+;; ;      ypos_array(yy) = ypos 
+;;    endfor
+;; endfor
+;; print, systime(1) - time
+
+;time = systime(1)
+xx = findgen(64*64) mod 64
+yy = floor(findgen(64*64) / 64.)
+xpos = (xx+1-32.5)*0.6048 + hgap*sign(xx+1-32.5)
+ypos = (yy+1-32.5)*0.6048 + hgap*sign(yy+1-32.5)
+d0mask =  insidepolygon_vect(xpos, ypos, ap1_x, ap1_y) * (1.-InsidePolygon_vect(xpos, ypos, bench1_x, bench1_y) )
+d0mask = reform(d0mask, [64, 64])
+
+d1mask = insidepolygon_vect(xpos, ypos, ap1_x, ap1_y) * (1.-InsidePolygon_vect(xpos, ypos, bench2_x, bench2_y)) 
+d1mask = reform(d1mask, [64, 64])
+;print, systime(1) - time
+
+;stop
+
+
+
 
 ;!p.multi=[0,2,1] 
 
