@@ -1,0 +1,1053 @@
+SIMPLE  =                    T /Dummy Created by MWRFITS v1.10                  BITPIX  =                    8 /Dummy primary header created by MWRFITS         NAXIS   =                    0 /No data is associated with this header          EXTEND  =                    T /Extensions may (will!) be present               END                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             XTENSION= 'BINTABLE'           / Binary Table Extension                         BITPIX  =                    8 / binary data                                    NAXIS   =                    2 / Simple 2-D matrix                              NAXIS1  =                   46 / Number of bytes per record                     NAXIS2  =                 1283 / Number of records                              PCOUNT  =                    0 / Get rid of random parameters                   GCOUNT  =                    1 / Only one group (isn't it obvious?)             TFIELDS =                    5 / Number of data fields (columns)                COMMENT                                                                         COMMENT  *** End of mandatory fields ***                                        COMMENT                                                                         CDS-CAT = 'J/A+A/545/A27'      / Catalogue designation in CDS nomenclature               INTEGRAL/IBIS 9-year Galactic Hard X-Ray Survey (Krivonos+, 2012)      EXTNAME = 'J_A_A_545_A27_catalog' / Identification of the table                 CDS-NAME= 'J/A+A/545/A27/catalog' / Table name in METAtab                                The catalogue of hard X-ray sources                                    UCD__1  = 'meta.id '           / ................................byte#0         TDISP1  = 'A21     '           / Display Fortran Format                         COMMENT                                                                         COMMENT  *** Column formats ***                                                 COMMENT                                                                         TFORM1  = '30A     '           / Ascii string                                   COMMENT                                                                         COMMENT  *** Column names ***                                                   COMMENT                                                                         TTYPE1  = 'NAME    '           / Object name                                    UCD__2  = 'pos.eq.ra;meta.main' / ...............................byte#21        TDISP2  = 'F7.3    '           / Display Fortran Format                         TFORM2  = 'E       '           / 32-bit floating-point (simple precision)       TTYPE2  = 'RAJ2000 '           / Right Ascension J2000 (in decimal degrees)     TUNIT2  = 'deg     '           / degree                                         UCD__3  = 'pos.eq.dec;meta.main' / ..............................byte#25        TDISP3  = 'F7.3    '           / Display Fortran Format                         TFORM3  = 'E       '           / 32-bit floating-point (simple precision)       TTYPE3  = 'DEJ2000 '           / Declination J2000 (in decimal degrees)         TUNIT3  = 'deg     '           / degree                                         UCD__4  = 'phot.flux.density;em.gamma.hard' / ...................byte#29        TDISP4  = 'F6.2    '           / Display Fortran Format                         TFORM4  = 'E       '           / 32-bit floating-point (simple precision)       TTYPE4  = 'FLUX1   '           / 17-60keV flux, in mCrab                                                         (1mCrab=1.43nW/m2=1.43*10^-11^erg/s/cm^2^) (2) TUNIT4  = 'mCrab   '           / milliCrab (X-ray) flux                         UCD__5  = 'stat.error'         / ................................byte#33        TDISP5  = 'F4.2    '           / Display Fortran Format                         TFORM5  = 'E       '           / 32-bit floating-point (simple precision)       TTYPE5  = 'E_FLUX1 '           / 17-60keV 1 {sigma} flux error, in mCrab                                         (1mCrab=1.43nW/m2=1.43*10^-11^erg/s/cm^2^)     TUNIT5  = 'mCrab   '           / milliCrab (X-ray) flux                         END                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             IGR J00040+7020               ?&éBŒ¦é?™š=£×
+IGR J00234+6141               @·®Bv¼j?\=uÂTYCHO SNR                     @ÊŸ¾B€G®?(ö=uÂSWIFT J0025.8+6818            @Ë÷ÏBˆ¶É?zá=\)V709 Cas                      @æ‡+Bm+@c×
+=uÂIGR J00291+5934               @èjBnIº?Ð£×=uÂIGR J00335+6126               AKÇBuÚ>×
+==uÂ87GB003300.9+593328           A‘hBoOß?Që…=uÂIGR J00370+6122               A“uBu‡+?\)=uÂGamma Cas                     AbÝ/BrÜ)@Z=q=\)1A 0114+650                   Aœ¬B‚“ø@õÂ=\)4U0115+63                     A
+=B~øÕAÒ\=\)4U0142+61                     AÔÀƒBw?ë…=¸QìRJ0146.9+6121                 AÕdZBup¤?k…=¸QìIGR J01545+6437               AåB?}>æff=¸QìIGR J02095+5226               B¤ÝBQÉº@33>.{IGR J02164+5126               BiyBMÃ–?šáH>B\QSO B0212+73                  B	­B“­‘?ª=q>8QìLSI +61 303                   B t¼Bt×
+?¯\)=õÂ4U 0241+61                    B$î˜ByÚ@4zá>¸SWIFT J0250.2+4650            B*n˜B;+?ƒ×
+>B\IGR J02501+5440               B*“uBZáH?O\)>.{PERSEUS CLUSTER               BGí‘B&\@¸R>\)IGR J03249+4041               BM‡B"Ú?.{>¸GK Per                        BS1'B/‡+?Ù™š>\)IGR J03334+3718               BUk…B7L?†ff=õÂV0332+53                      BWBT±'Bæ¨ö>.{4U 0352+30                    BkbNAøSøAìõÃ>¸IGR J04059+5416               BuþúBY ?\(ö>.{3C111                         B)üBš@…Â>\)IGR J04221+4856               BƒÓBCÊÁ?8Qì>¸RX J0440.9+4431               BŒ{dB2 Å@€Qì>¸UGC03142                      BöÉAçñª?å¸>.{LEDA 168563                   B’hBF33?å¸>¸IGR J04571+4527               B”š B5ß;?k…>¸V1062 Tau                     B—;çAÆ5??!G®>¸IGR J05081+1722               BšoAŠÂ?ˆõÃ=õÂIRAS 05078+1626               B›^¸Aƒýô@p£×=õÂRX J0525.3+2413               B¢Ç®AÁÈ´?™š=ÌÌÍPKS 0528+134                  B¥ŒJAY+?O\)=õÂCrab                          B§BA° ÅDm†f=ÌÌÍA 0535+262                    B©uÃAÒ‡+BsõÃ=ÌÌÍBY Cam                        B«ožBshs?Ð£×>Š=qIGR J05470+5034               B­¢NBJj?fff>B\NGC 2110                      B°ÀîÈ´A&{>.{MCG 8-11-11                   B±t9B9½q@ï®>LÌÍSWIFT J0558.0+5352            B³ßBW¥ã?Æff>k…IRAS 05589+2828               BµAã¼j@£×=õÂ4U 0614+091                   B¼bA-AŽ\>aG®IGR J06415+3251               BÈ¼jBqª@
+áH>€  MXB 0656-072                  BÑ%`Àæ°!@*áH>\)SWIFT J0732.5-1331            BâKDÁX1'?½p¤>\)IGR J07563-4137               Bî$ZÂ&”{?:áH=ÌÌÍIGR J07597-3842               BïÜ)ÂàB?þ¸R=áG®ESO 209-G012                  BðúáÂG	7?”zá=¸QìIGR J08297-4250               BþæfÂ+dZ>³33=\)Vela pulsar                   C ÕÂ4¹X@È£×=\)4U 0836-429                   CYXÂ+–‡A0õÃ=\)FAIRALL 1146                  C¡ÂõÃ?•Â=ÌÌÍIGR J08390-4833               C²òÂB“?
+==\)Vela X-1                      C‡ðÂ"9XC3s3=£×
+IGR J09026-4812               C¦éÂ@ë…?Ž{=\)IRAS 09149-6206               C
+Ây\)?µÂ>¸IGR J09189-4418               CºáÂ18R>³33=£×
+X 0918-548                    CáÂ\Ñì@HQì=¸QìMCG-5-23-16                   CìÁ÷“uAQì>uÂIGR J09522-6231               CÕÂz.?0£×=ÌÌÍSWIFT J0958.0-4208            CkDÂ(?p£×>¸GRO J1008-57                  Cs3Âi+@\ÌÍ=¸QìIGR J10095-4248               Ct9Â+=q?ÁG®>#×
+IGR J10100-5655               C‡mÂc¥ã?5Â=¸QìIGR J10109-5746               CÇ+Âg5??†ff=£×
+3U 1022-55                    Cj=Âc-?=p¤=£×
+IGR J10386-4947               C°!ÂG Å?^¸R=õÂIGR J10404-4625               C #×Â9–‡?ž¸R>#×
+IGR J10447-6027               C!)yÂq¿}?¸=£×
+ETA CAR                       C!=qÂnÛ#>ë…=£×
+IGR J11187-5438               C)˜ÂZ¥ã>æff=¸Qì1A 1118-61                    C*;#Âw°!@Tzá=£×
+Cen X-3                       C*OžÂr€ B4ÌÍ=£×
+IGR J11305-6256               C,ÅãÂ{ÌÍ?þ¸R=£×
+IGR J11361-6003               C.þÂpDœ?\)=£×
+IGR J11435-6109               C/þwÂtƒ@#×
+=£×
+IGR J11459-6955               C0†¨Â‹âÑ?+…=õÂA1145.1-6141                  C0ÜîÂwâNA…™š=£×
+X1145-619                     C1  ÂxÓø?ØQì=£×
+IGR J12026-5349               C4°¤ÂWY@\=ÌÌÍ1ES 1210-646                  C7DÂÂ?LÌÍ=¸QìIGR J12134-6015               C7]²Âq>áG®=£×
+GX 301-2                      C:§mÂ{‡C8R=£×
+XSS J12270-4859               C:ýqÂCŒJ?¢\>™šIGR J12349-6434               C<ºáÂ Å@J=q=£×
+WKK 1263                      C>_;ÂgOß?˜Qì=¸QìIGR J12480-5829               C@TÂiÔþ>úáH=¸Qì4U 1246-588                   C@g®ÂlaH@7
+==£×
+2S1254-690                    CBjÂŠå?õÂ=ÌÌÍ4U 1258-61                    CCPåÂvgm?À  =£×
+1RXP J130159.6-635806         CC~¸ÂàB?ÁG®=£×
+PSR B1259-63                  CC²òÂX?p£×=£×
+NGC 4945                      CD]qÂEàBA.\=õÂIGR J13107-5551               CE²-Â_~ú?“33=¸QìIGR J13186-6257               CGžúÂ{Ôþ?0£×=£×
+4U 1323-619                   CI¦¨Âx‰7A zá=£×
+4U 1344-60                    CNæ%ÂrxÕ@u¸=£×
+IGR J14003-6326               CR ÅÂ}­?LÌÍ=£×
+IGR J14091-6108               CTF%Ât‘h>×
+==£×
+Circinus galaxy               CUJÁÂ‚®˜A<Qì=£×
+IGR J14175-4641               CVDZÂ:¼j?k…=ÌÌÍ4U 1416-62                    CWH´Âz¹X?:áH=£×
+IGR J14257-6117               CXiºÂu9X?\=£×
+IGR J14298-6715               CYtþÂ†yX?:áH=¸QìNGC 5643                      CZ+DÂ0Á‰?5Â=ÌÌÍIGR J14331-6112               CZC–Âub?!G®=£×
+IGR J14471-6414               C]š^Â€ŒÍ?0£×=¸QìIGR J14471-6319               C]ÎVÂ}#×?®=£×
+IGR J14488-4009               C^2òÂ —?   =¸QìIGR J14493-5534               C^RoÂ^bN?záH=£×
+IGR J14515-5542               C^æfÂ^¼j?ƒ×
+=£×
+IGR J14536-5522               C_g+Â]j?5Â=£×
+IGR J14552-5133               C_ÖÂNNÙ?@  =¸QìIC 4518A                      C`kÇÂ,…?œ(ö=¸QìSWIFT J1508.6-4953            Cc'mÂG~ú?¸=£×
+IGR J15094-6649               CcWLÂ…§ð?   =ÌÌÍPSR 1509-58                   Cd{¦Âl’o@ôzá=£×
+4U 1516-569                   Cf+DÂd¬@‚\=£×
+IGR J15335-5420               Ci_}ÂYn˜>Ç®=£×
+IGR J15360-5750               Cj ƒÂgA‰?€  =£×
+IGR J15390-6226               CjËÂyå`?333=¸QìIGR J15414-5030               Ckc–ÂIöÉ>áG®=\)4U 1538-522                   Ck˜ÕÂQ‹DAq¸=\)XTE J1543-568                 Cl%Âbê>Â\=£×
+4U 1543-624                   Clö‡ÂzH´@  =ÌÌÍNY Lup                        Cm˜Â5ès@†{=\)1E 1547.0-5408                Cmº ÂY.?‡®=\)XTE J1550-564                 Cm¾úÂaæfAXÌÍ=£×
+IGR J15539-6142               CnlJÂv·L?(ö=¸QìESO 389- G 002                Cn¶FÂ¤Ý?¸R=ÌÌÍ4U 1556-605                   CpM‘ÂrÐå?\)=¸QìIGR J16058-7253               Cq{#Â‘ÍP?Ž{>™šWKK 6092                      Crÿ}Âr†%?…¸=¸Qì4U 1608-522                   Cs-ÓÂQ²-A†áH=\)IGR J16167-4957               Ct$ÂGéy?•Â=\)IGR J16175-5059               CtYšÂK¿}>Ü(ö=\)IGR J16181-5407               Ct†fÂXs¶>½p¤=\)IGR J16185-5928               Ct¥ãÂmÜ)?W
+==¸QìIGR J16195-4945               Ctá‰ÂFöÉ?ºáH=\)IGR J16195-2807               CtáËÁáV?ó33>#×
+IGR J16207-5129               Cu1ªÂN@(õÃ=\)4U 1624-49                    Cw‰ÂDÏß@Fff=\)IGR J16283-4838               CwhÂB¢Ñ?
+==\)IGR J16287-5021               Cw  ÂIxÕ>Â\=\)IGR J16293-4603               Cw^wÂ8Rò>Ç®=\)IGR J16318-4848               Cwó¶ÂCC–A¦¸R=\)IGR J16320-4751               CxÂ?‚Ajff=\)4U 1626-67                    Cx3Â†îAn¸R>™šIGR J16336-4733               Cxe`Â><j@Vff=\)4U 1630-47                    Cx†%Â=\A‡®=\)ESO 137-G34                   CxÔ9ÂhW
+?Tzá=¸QìIGR J16358-4726               CxýôÂ= Å?¸R=\)Triangulum A                  Cy‹ÇÂ€Á?G®>¸IGR J16385-2057               Cy¤œÁ§Oß?&ff=õÂAX J163904-4642               CyÆ%Â:Ñì@ˆ  =\)4U 1636-536                   Cz: ÂWA©™š=\)IGR J16418-4532               Czv‡Â6$Ý@[…=\)GX 340+0                      C{r°Â6s¶AÑG®=\)IGR J16465-4507               C{¥ãÂ4xÕ?”zá=\)IGR J16479-4514               C|ãÂ4×
+@Y™š=\)IGR J16482-3036               C|‘Áô™š?Ï\)=£×
+IGR J16493-4348               C|^wÂ/Iº?èõÃ=\)IGR J16500-3307               C||îÂs¶?œ(ö=\)NGC 6221                      C}JÂlàB?—
+==ÌÌÍXTE J1652-453                 C}3Â5aH?šáH=\)GRO J1655-40                  C}¾ÂaH@è£×=\)IGR J16547-1916               C}´¼Áš&é?n{=ÌÌÍIGR J16560-4958               C}ö‡ÂGò°>Â\=\)IGR J16558-5203               C~´ÂPRò?¾¸R=\)IGR J16562-3301               C~ÉÂ&é?Ç®=\)MAXI J1659-152                C~ÂÑÁt“A#33=õÂAX J1700.2-4220               C¶Â)Z?\)=\)OAO 1657-415                  C3øÂ&ž¸Bg£×=\)XTE J1701-462                 C>5Â8Ç®@  =\)IGR J17014-4306               CVFÂ,^5?   =\)XTE J1701-407                 Cj=Â#xÕ@¸R=\)GX 339-4                      C´þÂC(öB.=\)4U 1700-377                   Cü)ÂaHC-
+==uÂGX 349+2                      C€7Â®B33=uÂIGR J17062-6143               C€GðÂvÏß?³33>¸4U 1702-429                   C€HRÂ,$ÝA6áH=\)1RXS J170849.0-400910         C€šÂ ˜“?G®=uÂ4U 1705-440                   C€/Â0jA€£×=\)4U 1705-32                    C€PÂG®?¬ÌÍ=LÌÍIGR J17091-3624               C€¤þÂž¸@ÈQì=uÂXTE J1709-267                 C€³ÁÕ;d?0£×=uÂIGR J17098-3628               C€¾ÂÊÁ@xõÃ=uÂXTE J1710-281                 C€Æ¨ÁáV@(ö=LÌÍRX J1713.7-3946               C`Â¯>®{=uÂ4U1708-40                     C¸Â#]/?\)=\)Oph cluster                   CÙÁºÈ´@W®=uÂV2400 Oph                     C–ÁÁùÛ@£×=uÂSAXJ1712.6-3739               CøÂ’o@xQì=uÂIGR J17157-5449               CvFÂ[8R?   =¸QìIGR J17164-3803               C¾Â(ö?(ö=uÂNGC 6300                      C ƒÂ{F¨@p£×>™šIGR J17174-2436               CªáÁÄÙ>æff=LÌÍIGR J17197-3010               CñËÁñ`B>\)=LÌÍIGR J17195-4100               CóøÂ$\?æff=uÂXTE J1720-318                 Cÿ¾Áþo?!G®=LÌÍIGR J17200-3116               C‚°ÁúG®?À  =LÌÍIGR J17204-3554               C‚Â¥ã>úáH=LÌÍIGR J17233-2837               C‚lÍÁäùÛ>æff=LÌÍEXO 1722-363                  C‚¦Â"Ñ@ÍÂ=LÌÍIGR J17254-3257               C‚­/ÂÛ#?°£×=LÌÍ4U 1724-30                    C‚ñ‰ÁöffAzáH=#×
+IGR J17303-0601               CƒKDÀ¿|î@=p¤=õÂIGR J17306-2015               CƒLîÁ¢-?\)=uÂIGR J17315-3221               Cƒh´Â9X>™™š=#×
+GX 9+9                        CƒwÏÁ‡§ðA\=£×
+GX 354-0                      Cƒ~ÙÂTþB33=LÌÍGX 1+4                        CƒhÁÅñªBG®=LÌÍIGR J17320-1914               CƒªÁ™¬?(õÃ=uÂIGR J17331-2406               Cƒ  ÁÁ->®{=LÌÍRapidBurster                  Cƒ¬îÂb@:áH=LÌÍIGR J17350-2045               Cƒß}Á¥õÃ?!G®=uÂIGR J17353-3539               Cƒì‹Â®?!G®=LÌÍIGR J17353-3257               Cƒí‘Â¯?uÂ=#×
+IGR J17361-4444               C„	ºÂ2ó¶>ÌÌÍ=£×
+GRS 1734-292                  C„/\Áéo@Žff=#×
+IGR J17379-5957               C„2ÑÂoÒò?8Qì>\)SLX 1735-269                  C„I7Á×ïžAzá=#×
+4U 1735-444                   C„_;Â1ÎÙA•™š=£×
+IGR J17391-3021               C„f¨ÁòÆ¨?=p¤=#×
+GRS 1736-297                  C„p¤Áí§ð>aG®=#×
+XTE J1739-285                 C„|ÍÁã÷Ï?\)=#×
+IGR J17402-3656               C„PÂ³3?™š=LÌÍSLX 1737-282                  C„•Áâ@J=q=#×
+IGR J17407-2808               C„–fÁáb?G®=#×
+IGR J17418-1212               C„¾VÁC7L?µÂ=¸QìXTE J1743-363                 C„ß;Â…?Ù™š=LÌÍIGR J17438-0347               C„ùÛÀr^5?\)=ÌÌÍ1E 1740.7-294                 C„ýôÁíáHB\)=#×
+IGR J17448-3231               C…RÂ¬>½p¤=#×
+KS1741-293                    C…úÁê²-@S×
+=#×
+GRS 1741.9-2853               C…  ÁçV@7
+==#×
+AX J1745.6-2901               C…3TÁè5?@ £×=#×
+1E 1742.8-2853                C…@ ÁçOß@¦¸R=#×
+A 1742-294                    C…C3Áì$ÝA-G®=#×
+IGR J17464-3213               C…HsÂ î˜Ak
+==#×
+1E 1743.1-2843                C…J=ÁåáH@„ÌÍ=#×
+SAX J1747.0-2853              C…ahÁçb@ÌÍ=#×
+IGR J17464-2811               C…h“Ááp¤?°£×=#×
+IGR J17473-2721               C…iºÁÚÊÁ@ë…=#×
+SLX1744-299/300               C…jÁÁð{@ÝÂ=#×
+IGR J17475-2822               C…oÁâõÃ?èõÃ=#×
+IGR J17475-2253               C…r°Á¶ùÛ?5Â=LÌÍGX 3+1                        C…}ôÁÔr°A"¸R=#×
+IGR J17488-3253               C…œ‹Â¬?“33=#×
+AX J1749.1-2733               C…£3ÁÜff?Š=q=#×
+AX J1749.2-2725               C…¥`ÁÛ^5?W
+==#×
+GRO J1750-27                  C…¦fÁÕ-@xõÃ=#×
+IGR J17497-2821               C…³ÁâÐå@\=#×
+SLX 1746-331                  C…¼ÍÂÜ)>×
+==#×
+4U 1746-37                    C…Æ¨Â7L@33=LÌÍSAX J1750.8-2900              C…ÌÍÁèMÓ?‡®=#×
+IGR J17505-2644               C…Ô9ÁÕß;?\=#×
+IGR J17507-2856               C…×mÁç`B?   =#×
+GRS 1747-313                  C…ØöÁúE¢?xQì=#×
+XTE J1751-305                 C…èRÁõ¬>W
+==#×
+IGR J17513-2011               C…éšÁ¡°!?\(ö=LÌÍXTE J1752-223                 C†1Á²ÊÁ?ƒ×
+=LÌÍSWIFT J1753.5-0127            C†.ú¿¹º^Bo\)=ÌÌÍAX J1753.5-2745               C†0 ÁÞ  >LÌÍ=#×
+AX J1754.2-2754               C†HsÁß“>®{=#×
+IGR J17544-2619               C†LîÁÒ“u?™š=#×
+IGR J17585-3057               C†Ì¬Á÷°!>æff=#×
+IGR J17586-2129               C†Ó¶Á«V?À  =LÌÍIGR J17597-2201               C†÷ÏÁ°$Ý@0£×=LÌÍV2301 OPH                     C‡AõÃ?hõÃ>#×
+GX 5-1                        C‡${ÁÈŸ¾B,Â=LÌÍGRS 1758-258                  C‡&ÉÁÍó¶B7…=#×
+GX 9+1                        C‡1‰Á¤"ÑAp(ö=LÌÍIGR J18027-2016               C‡V¨Á¢9X@\)=LÌÍIGR J18027-1455               C‡YÁn“u?Â\=\)IGR J18044-2739               C‡Ž¸ÁÝ^5>ë…=#×
+IGR J18048-1455               C‡–éÁoSø?™š=\)XTE J1807-294                 C‡à¤Áë|î>Â\=LÌÍIGR J18078+1123               C‡ø1A5çm?W
+=>.{SAX J1808.4-3658              Cˆ‘Âí‘?   =uÂSGR 1806-20                   Cˆ¢Á£MÓ@¸=uÂIGR J18088-2741               Cˆ ƒÁÝ¡Ë>Ñë…=LÌÍXTE J1810-189                 CˆKÁ˜P?½p¤=uÂV4722 Sgr                     CˆX´ÁÑ/?ôzá=LÌÍPSR J1811-1925                CˆožÁ›bN?+…=uÂIGR J18134-1636               Cˆ¯¾Á„õÃ?ë…=\)IGR J18135-1751               Cˆ²òÁŽ¶F?ŒÌÍ=uÂGX 13+1                       CˆÐÅÁ‰C–AG®=\)M 1812-12                     CˆãTÁA‰7A¿\)=\)GX 17+2                       C‰ ÅÁ`\BAõÃ=\)IGR J18170-2511               C‰&ÉÁÉ7L?@  =LÌÍIGR J18175-1530               C‰2-Áw|î>¨õÃ=\)XTE J1817-330                 C‰6¨Â@e¸=LÌÍXTE J1818-245                 C‰OÁÄ/@33=LÌÍSAX J1818.6-1703              C‰WðÁˆ^5?‹…=\)AX J1820.5-1434               C‰‘hÁi"Ñ?   =\)IGR J18214-1318               C‰©üÁU
+=?¥¸=\)IGR J18219-1347               C‰ÀƒÁ\Ù>úáH=\)4U 1820-303                   C‰õ`ÁòéyAâ(ö=LÌÍXTE J1824-141                 CŠÙÁfÝ/?&ff=\)IGR J18249-3243               CŠdÂçm?ë…=uÂ4U 1822-000                   CŠ* »å`B?§®=£×
+IGR J18256-1035               CŠ6ÉÁ)?\=\)4U 1822-371                   CŠ9Ân˜A·®=\)IGR J18257-0707               CŠ=/Àå&é?333=\)LS 5039                       CŠF‡ÁmP?8Qì=\)IGR J18293-1213               CŠ¨´ÁCl‹?®=\)GS 1826-24                    CŠ¯\Á¾bNB”¨ö=uÂAX J183039-1002               CŠÒòÁ ƒ?.{=\)IGR J18308-1232               CŠÙšÁH›¦?.{=\)AX J1832.3-0840               C‹
+Á
+=q>Ü(ö=\)IGR J18325-0756               C‹Àþn˜?G®=\)SNR 021.5-00.9                C‹1hÁ) @'
+==\)PKS 1830-211                  C‹5ÃÁ¨vÉ?ýp¤=\)3C382                         C‹d9BÊÁ@/\)>½p¤RX J1832-33                   C‹wmÂøÕA®=\)AX J1838.0-0655               C‹ÀåÀÝp¤?ã×
+=\)IGR J18381-0924               C‹ÄÝÁ£×>×
+==\)Ser X-1                       C‹þw@¡?}A
+áH=\)IGR J18400-2439               CŒ
+ÁÅo>ë…=\)IGR J18410-0535               CŒ!'À²ùÛ?(õÃ=\)1E1841-045                    CŒ* ÀžJ@£×=\)AX J1845.0-0433               CŒ¡ªÀ’$Ý?—
+==\)GS 1843+00                    CŒ³¶?]p¤@k…=\)PSR J1846-0258                CŒÍÀ>E¢?À  =\)A 1845-024                    C¢ÀSø>õÂ=\)IGR J18483-0311               C	ÀK@xQì=\)IGR J18486-0047               C¿F§ð?E¸=\)IGR J18490-0000               C å¼Ôýô?G®=\)IGR J18497-0248               C7ÏÀ7;d>½p¤=\)4U 1850-087                   C¢°ÁKÇ@Ž{=£×
+IGR J18538-0102               C¹Û¿†>½p¤=\)4U 1849-31                    CáhÁùG®@°Qì=ÌÌÍXTE J1855-026                 Cð!À&‡+A
+ff=\)IGR J18559+1535               Cþ5AzA‰?™™š=£×
+XTE J1858+034                 CŽW
+@\1@–ff=uÂHETE J19001-2455              CŽ„þÁÇ^5Aƒ×
+=áG®XTE J1901+014                 CŽµ??¸“u@×
+=uÂ4U 1901+03                    CŽôþ@M/A<ÌÍ=uÂIGR J19072-2046               CgLÁ¦¸?J=q=õÂSGR 1900+14                   Ck#A?}?J=q=uÂXTE J1908+094                 C›ÇAJ?
+=q=uÂ4U 1907+097                   C´œAOßA(Qì=uÂX1908+075                     CÙÛ@ó33A<õÃ=uÂAql X-1                       Cès??}A(ö=\)IGR J19113+1413               CêáAc™š?(ö=\)SS 433                        Cú@Ÿ…@ð  =uÂIGR J19140+0951               CB-A$Ý@ù™š=uÂGRS 1915+105                  CfFA/¸CkÞ¸=uÂ4U 1916-053                   CØ“À§®@ë×
+=¸QìIGR J19267+1325               C‘ÒAVzá>½p¤=\)IGR J19302+3411               C’D{B§ð?^¸R=õÂSWIFT J1933.9+3258            C’ºáBž¸?‚\=áG®1H 1934-063                   C“0BÀÇC–?záH=áG®RX J1940.2-1025               C“†‡Á&È´@¸=õÂNGC 6814                      C“Ö‡Á%C–@:=q>¸IGR J19443+2117               C” ÅAªr°?&ff=ÌÌÍXTE J1946+274                 C”4{AÚí‘@p£×=ÌÌÍXSS J19459+4508               C”kB3V?záH=áG®KS 1947+300                   C”³TAñ´9@Z=q=ÌÌÍ3C403                         C•@ õÃ?\(ö=áG®4U1954+319                    C•v%B dZA1Â=¸QìCyg X-1                       C•ËdBÏßD(ª==£×
+Cygnus A                      C•ï\B"ó¶@‰G®=£×
+SWIFT J2000.6+3210            C–)B Ã–?ü(ö=¸QìIGR J20107+4534               C—RNB6E¢>ð£×=¸QìIGR J20159+3713               C—ðÅBÀƒ?W
+==\)IGR J20187+4041               C˜RB"½q?ž¸R=\)IGR J20216+4359               C˜¶¨B/öÉ?zá=£×
+IGR J20286+2544               C™‘hAÍãT@\)>¸EXO 2030+375                  CšRBPBFë…=\)Cyg X-3                       CšÓB#×
+Béæf=\)SWIFT J2033.4+2147            Cš2NA®t¼?±ë…>8QìSWIFT J2037.2+4151            Cš£uB'_;>áG®=\)SWIFT J2044.0+2832            C›‚ÑAäp¤?hõÃ=õÂIGR J20569+4940               CBF Å?333=£×
+SAX J2103.5+4545              CòòB7@Û33=\)SWIFT J2113.5+5422            CŸ5ãBYš >æff=¸QìIGR J21178+5139               CŸ·ÏBNš ?s33=£×
+IGR J21196+3333               CŸóB5??E¸=õÂIGR J21237+4218               C wLB)49?c×
+=£×
+IGR J21247+5058               C •BKæf@â\=£×
+IGR J21277+5656               C öÉBc¼j?ôzá=ÌÌÍIGR J21335+5105               C¡·BL„@#33=£×
+IGR J21358+4729               C¡üÍB=ê?…¸=£×
+SS Cyg                        C¢Ø“B.Qì@&ff=¸QìCyg X-2                       C£`BF¨A =q=õÂBL Lac                        C¥TÝB)‡?‹…>¸4U 2206+543                   C¥þ5BZb@ñë…=¸QìIGR J22292+6646               C¨§B…‹Ç?¸R=¸QìIGR J22534+6243               C«®¸BzäZ>×
+==\)IGR J23206+6431               C¯9BÓ?¸=\)Cas A                         C¯ljBk=q@[…=\)IGR J23308+7120               C°N¸BŽØ>úáH=¸QìIGR J23523+5844               C³	šBk	7>úáH=uÂ2MASX J00004876-0709117       >P©ÀäçB"§=£×
+Fairall 1203                  >âBòÂ™èoCØ¬=£×
+NGC 7811                      ?<Ÿ@V…ˆC„=£×
+2MASX J00032742+2739173       ?]BÄAÝ=Cç&£=£×
+Mrk 335                       ?Êh
+A¡ŸŠB;Ôò=£×
+2MASX J00091156-0036551       @Y¿}áB®<=£×
+Mrk 1501                      @(DÐA/™1C]êa=£×
+[HB89] 0014+813               @‰!FB£+ÓA·¨A=£×
+2MASX J00210753-1910056       @©;Á™XyBåŸ¾=£×
+2MASX J00264073-5309479       @Õl‹ÂT§8C—Ü½=£×
+[HB89] 0026+129               @éÐ7ATG®Bn½U=£×
+SWIFT J0030.0-5904            @ö×€ÂlN±C¨¦*=£×
+2MASX J00341665-7905204       A	²Âž-Ž@¡“M=£×
+2MASX J00343284-0424117       A
+0UÀŒçÕCNÿ=£×
+CGCG 535-012                  AfB6¨üCž™=£×
+Mrk 344                       A$ZA¼èCGß=£×
+SWIFT J004039.9+244539        A"«6AÆAUÀ§=£×
+ABELL 85                      A&…Ázá<ÃK“=£×
+SWIFT J0042.7+4111            A*¯ÈB$Í@§.=£×
+NGC 235A                      A+…Á¼SøCeÇ!=£×
+2MASX J00430184+3017195       A,óAòOvA.  =£×
+2MASX J00423991+3017515       A*©"Aòa‘E­×ë=£×
+MCG -02-02-095                A,•­Á9²B³Ä=£×
+ESP 39607                     A9`8Â cKBö2=£×
+Mrk 348                       AC$tAÿ§ðCGëó=£×
+MCG +05-03-013                ANUƒAë5ÇB—Ò=£×
+RX J0052.1-7319               AQy>Â’¢ÞA·¨A=£×
+Mrk 1148                      AO§A‹v”B"§=£×
+2MASX J00520383-2723488       AP@¸ÁÛ,ÚB¢£4=£×
+RX J0053.8-7226               AW©üÂäZBÏ¾=£×
+[HB89] 0052+251               A[y,AËjóC4!=£×
+1RXS J005528.0+461143         A]SB8Üû@œF =£×
+NVSS J005712+635942           AdÛŒBûBÁ7Ø=£×
+Mrk 352                       AoPAþ~C-ûM=£×
+ESO 195-IG 021 NED03          ArTÊÂ?xlCLß=£×
+2MASX J01012440-0308399       Au ÀI?}BÏ¾=£×
+SMC 59977                     Aa]Â‘Íw@œF =£×
+XTE J0103-728                 A{‰úÂ‘|-@1”N=£×
+PKS 0101-649                  A~?EÂMåD ô=£×
+MCG -07-03-007                A‚äÝÂ(ÝbC¨¦*=£×
+ESO 243- G 026                AƒDÂ<IqB
+‹=£×
+2MASX J01053882-1416133       AƒK/ÁdSBˆñ6=£×
+HE 0103-3447                  Aƒ©Â
+çBWg8=£×
+2MASX J01064523+0638015       A…‚;@ÔH¸C}=£×
+1RXS J010737.5-113946         A‡BÁ:§ðC-ûM=£×
+2MASX J01073963-1139117       A‡RCÁ:s™CÈçy=£×
+1RXS J010713.0-113554         A†uŽÁ9œx@ˆÄ=£×
+3C 033                        A‰Ã-AUe,C-ûM=£×
+NGC 424                       AŽë…ÂTþBþ¹5=£×
+87GB 011040.5+250307          A’Á¾AÊ„¶C’¦{=£×
+Mrk 975                       A“³sATY CVS=£×
+Mrk 1152                      A“«kÁm‡”C(ð=£×
+IC 1657                       A”;çÂšƒCmì=£×
+NGC 454E                      A”ÔÂ]–¡Cž™=£×
+NGC 452                       A˜~AøEJBö2=£×
+2MASX J01163118-1236171       A™	ÕÁI¬ÚBwØ=£×
+SMC X-1                       Aš+ÔÂ’âø?ßŠ)=£×
+[HB89] 0119-286               A£·wÁâËD•¼é=£×
+MCG +08-03-018                A¥%ÍBH8RBßæ=£×
+SHBL J012308.7+342049         A¦IºB	c:Ad­´=£×
+NGC 526A                      A§ÐÂBøC’¦{=£×
+Fairall 9                     A§†ÂÂk9	Bþ¹5=£×
+NGC 513                       A¨å,B2°CGëó=£×
+1RXS J012556.6+351039         A«Ý˜B´TBþ¹5=£×
+RHS 10                        A«ïuAtÜfCLß=£×
+Mrk 359                       A¯ÈA™n@B#Ò÷=£×
+MCG -03-04-072                A°9RÁ–xCGëó=£×
+CGCG 459-058                  A°Ð.Aƒ¬˜CNÿ=£×
+2MASX J01290761-6038423       A²A Âr”{BÈ  =£×
+ESO 244-IG 030                A³µtÂ)NVBv=£×
+2MASX J01302127-4601448       A´µ¨Â8çD˜=£×
+ESO 353- G 009                A·®@Âz$Cmì=£×
+NGC 612                       A»ìÀÂù$D$Bˆ=£×
+2MASX J01344565-0430134       A½…vÀÐC×}ø=£×
+B3 0133+388                   AÁMBfLD°ó=£×
+ESO 297-018                   AÅ=Â ¬C¢ÚÉ=£×
+2MASX J01392400+2924067       AÆÌÍAë7B5=£×
+2MASX J01402676-5319389       AÈäœÂUOkBn½U=£×
+B2 0138+39B                   AËìÍB×C(ð=£×
+2MASX J01485967+2145343       AÙýKA®ýB®<=£×
+NGC 678                       AÚÔ,A¯úxCeÇ!=£×
+2MASX J01492228-5015073       AÚ¾
+ÂIDiÁÃ=£×
+ESO 354- G 004                Aße`ÂÀOB³Ä=£×
+MCG -01-05-047                Aá¢4À\˜_C:=£×
+2MASSi J0154403-270701        AåWåÁØï€BºÊ=£×
+1ES 0152+022                  AæÔ{@'šB´W¯=£×
+2MASX J01571097+4715588       Aê]rB=úC„=£×
+IGR J01572-7259               Aê‰ÏÂ‘óA½ÿŸ=£×
+UGC 01479                     Að¢œAÃÊ#C¨¦*=£×
+NGC 788                       Aò7ÀÚ“CˆÃ3=£×
+2MASX J02021731+6821460       Aô“uBˆ¹XE#‚=£×
+2MASX J02013241+6824219       Aó{BˆÏìD•¼é=£×
+1RXS J020301.2-240213         Aö”ÁÀK)BWg8=£×
+Mrk 1018                      Aüˆf¾•2aC®¦å=£×
+3C 59                         AþT<Aì9XC(ð=£×
+1WGA J0206.7-7427             Aý…ðÂ”ìÚA#Bö=£×
+RX J0209.6-7427               Bš Â”çmB"§=£×
+MCG +07-05-016                Aÿ¸B3`B¨Uà=£×
+NVSS J020834-173933           B ”þÁFtCGß=£×
+ARP 318                       B…§Á"‰BDJôº=£×
+ESO 197- G 027                Bà!ÂFËKB"§=£×
+2MASX J02141794+5144520       BL‚BNý·AN©Ì=£×
+Mrk 590                       B\¿DZCBø=£×
+2MASX J02143730-6430052       BŸgÂ ºC =£×
+3C 062                        BŸûÁOÞxD°ó=£×
+1RXS J022206.0+522112         BkBQhÁAA0Š=£×
+2MASX J02223523+2508143       B–SAÉeD›$=£×
+V Zw 232                      B¤B7FBCÈ?=£×
+PKS 0222-23                   BlÁ¹´ÕBÏ¾=£×
+RBS 0315                      BøA–=ÙC®¦å=£×
+Fairall 296                   B&‡Â|å`Cmì=£×
+AM 0224-283                   Bn¸ÁâÍ_CˆÃ3=£×
+MCG +04-06-043                BèøA¾eÍAÒbU=£×
+NGC 931                       B=¿Aú~]BÈ  =£×
+Mrk 1044                      B@Á÷“C¢ÚÉ=£×
+IC 1816                       BÙšÂ°;CÁý =£×
+QSO B0229+200                 BÏvA¢N<B¢£4=£×
+NGC 973                       BUÐB¼C®¦å=£×
+NGC 985                       B¡-ÁšB´W¯=£×
+ESO 416-G002                  B9rÁìÖmD0@Q=£×
+ESO 198-024                   BTÂPÄêC’¦{=£×
+2MASX J02384313-6117227       B·ðÂu(ˆCïh,=£×
+2MASX J02384897-4038377       BÐðÂ"“XBº«=£×
+NGC 1052                      B!{ÁÂC—Ü½=£×
+Mrk 595                       B!”â@åýÚBP%÷=£×
+2MASX J02420381+0510061       B".@¥cˆD ô=£×
+2MASX J02421465+0530361       B">w@°QìBºÊ=£×
+NGC 1068                      B"­¬¼Yè>CAC=£×
+2MFGC 02171                   B$ÍBUåãB)„µ=£×
+ESO 479- G 031                B$Ë±ÁÄrCGß=£×
+4C +10.08                     B%9rA,¢œBö2=£×
+2MASX J02485937+2630391       B(ý"AÔSCÐ¦=£×
+NGC 1106                      B*¬ÚB&¯žD ô=£×
+NGC 1125                      B+¬Á…5?CˆÃ3=£×
+2MASX J02513173-6803059       B+‡ÈÂˆ^CÈ?=£×
+FGC 0351                      B,‘'B,«kC¢ÚÉ=£×
+MCG -02-08-014                B,c×Á*™C(ð=£×
+NGC 1142                      B/4¾<£CÁý =£×
+XY Ari                        B0&fA›‡ýBP%÷=£×
+ESO 417- G 006                B0[õÂ ¾C]êa=£×
+ABELL 401                     B2òÿAYQ<ÃK“=£×
+2MASX J02593756+4417180       B3 BB1'RC—Ü½=£×
+MCG -02-08-038                B4dÁ-1C-ûM=£×
+NGC 1194                      B7Ñƒ¿FC×}ø=£×
+ESO 031- G 008                B;–³Â‘«C-ûM=£×
+NGC 1229                      B<.Á·¯·C¢ÚÉ=£×
+2MASX J03104435+3239296       B>½qB¡ËA¥ã=£×
+RX J0311.3-2046               B?PHÁ¦,qC¨¦*=£×
+[HB89] 0312-770               B?ë¼Â™ºoCGß=£×
+2MASX J03120291+5029147       B@¡BIóBºÊ=£×
+QSO B0309+411                 BA1B%TþD=!=£×
+MCG +00-09-042                BE	b? ¢ýC]êa=£×
+2MASX J03181899+6829322       BFQ BˆûõC»P\=£×
+1H 0323+342                   BL¯žB·µC´ß=£×
+LCRS B032315.2-420449         BM	ºÂ'žBºÊ=£×
+SWIFT J0325.6-0907            BMÛÁèñCp„=£×
+2MASX J03252346-5635443       BMdZÂbaÿCˆÃ3=£×
+PKS 0326-288                  BP›ÚÁå—YCv[=£×
+2MASX J03305218+0538253       BRÞ£@´~„Bßæ=£×
+MCG -01-09-045                BSb8À¤‰DC4!=£×
+NGC 1365                      BU›=ÂÅCGß=£×
+2MASX J03342453-1513402       BVh¤Ás¤¶Cmì=£×
+2MASX J03352254+1907282       BW`A˜þÅC´ß=£×
+4C +32.14                     BX€ƒB;™D°ó=£×
+ESO 548-G081                  B^ßÁ©ôˆC4!=£×
+LCRS B034324.7-394349         Ba5vÂLšBßæ=£×
+HE 0345-3033                  BcxÁó-‚BwØ=£×
+QSO B0347-121                 BecÁ?ÚQB"§=£×
+2MASX J03502377-5018354       Bfe`ÂI=VD i=£×
+Fairall 1116                  Bg±áÂ!Ý«Bº«=£×
+PKS 0352-686                  BhõZÂ‰
+õB/i¹=£×
+2MASX J03534246+3714077       Biµ?Bð¤B®<=£×
+2MASX J03540948+0249307       Bj(h@4ÏúBn½U=£×
+2MASX J03561995-6251391       BlTþÂ{qªBÖK“=£×
+2MASX J03565655-4041453       BlñAÂ"È´Cïh,=£×
+2MASX J03574513+4155049       BmÀƒB'¬"Bf°€=£×
+SARS 059.33488-30.34397       BoWxÁñŸA•Ú›=£×
+SARS 059.28692-30.44439       Bo%¸ÁòlBEZ=£×
+4C +50.11                     Bo~ìBKÛDCëQ=£×
+ESO 549- G 049                Brm‘ÁbND°ó=£×
+PKS 0402-362                  BsåUÂUáCp„=£×
+ESO 359- G 019                Bu ÂÀ Cïh,=£×
+[HB89] 0403-132               Bu‘ÁR1¶BwØ=£×
+3C 105                        BwF?@mBÄCGß=£×
+MG1 J041325+1659              B}^A‡ú¶CAC=£×
+ABELL 478                     B}XEA'ŸV9=ò=£×
+3C 109                        B}¬?A3BæC-ûM=£×
+IRAS 04124-0803               B~àÅÀý°ŠAÄÛ=£×
+XTE J0421+560                 BÙÛB_ÿc@Ì'&=£×
+NGC 1566                      B‚ åÂ[ÀPCeÇ!=£×
+ESO 157- G 023                Bƒ3•Â`çdCÁý =£×
+2MASX J04234080+0408017       BƒÖý@„HBö2=£×
+IW Eri                        B„õØÁž @”#=£×
+1H 0419-577                   B…ËÂdÌçAá0¾=£×
+SWIFT J0427.6-1201            B…¿¼Á@4D	Âï=£×
+SWIFT J042749.42-670436.1     B…élÂ†'EE´6‰=£×
+2MASX J04294735-6703205       B†èXÂ†™@&0Ú=£×
+2MASX J04293830-2109441       B†Ñ«Á©L6Cß.Ä=£×
+ABELL 3266                    B‡™rÂu >]\=£×
+3C 120                        Bˆ—¨@«VmC(ð=£×
+2MASX J04332716-5843346       BˆºDÂjç»C÷ö=£×
+Mrk 618                       BŠ/žÁ&Bí³=£×
+2MASX J04372814-4711298       BŠ¼Â<Ä C =£×
+MCG -02-12-050                B‹BÁ,¼C-ûM=£×
+ESO 118-IG 033 NED01          B‹ýùÂnºBÖK“=£×
+2MASX J04404770+2739466       BŒeÓAÝMþC-ûM=£×
+IRAS 04392-2713               BŒ°1ÁÙBWg8=£×
+1RXS J044154.5-082639         BŒòüÁ Bˆñ6=£×
+2MASX J04440903+2813003       BŽ@Aá¼C®¦å=£×
+PKS 0442-28                   BŽPmÁáR4Cž™=£×
+UGC 3157                      B?}A“¯ìC}=£×
+2MASX J04500193-5512404       B‘3Â\ØEC¨¦*=£×
+SWIFT J045106.8-694803        B‘Ž˜Â‹šB~k=£×
+MCG -01-13-025                B‘Ø†ÀsÍ6C´ß=£×
+RBS 594                       B‘ÝôÂh»çCmì=£×
+CGCG 420-015                  B’¶ð@ø¡CGëó=£×
+2MASX J04544295-4314231       B“[ŒÂ,õtC =£×
+ESO 033- G 002                B“ýÌÂ—Cp„=£×
+4C +27.14                     B•÷«AØÎ;CGß=£×
+2MASX J04595677+3502536       B•ùKB1vC-ûM=£×
+IGR J05007-7047               B–bAÂ|’A¥ã=£×
+2MASX J05020903+0331499       B—N@aô¡C(ð=£×
+LEDA 097068                   B—|6A·ûJB®<=£×
+1WGA J0503.8-2823             B—ÉÁâ@B—Ò=£×
+2MASX J05043414-7349269       B˜HöÂ“¥þCp„=£×
+2MASX J05052442-6734358       B˜´Â‡'8B®<=£×
+2MASX J05054575-2351139       B˜á‰Á¾ÔÊC»P\=£×
+87GB 050246.4+673341          B™ø B‡?4B~k=£×
+ESO 553- G 022                B›ûNÁ“ó|C„=£×
+CGCG 307-007                  Bœ¢ýB„í‡BÈ  =£×
+CXO J051406.4-400238          BÆÂ ,ô?w[X=£×
+2MASX J05151978+1854515       Bª-A—PŽCÈçy=£×
+Ark 120                       Bž_¾e,BåŸ¾=£×
+2MFGC 04298                   Bž0~A›ŸùBÁ7Ø=£×
+MCG -02-14-009                Bž-.Á(ûíBwØ=£×
+ESO 362-18                    BŸÌqÂ¡–CNÿ=£×
+PICTOR A                      BŸéüÂ7²C}=£×
+LMC X-2                       B ;ÍÂíú9ñ¡=£×
+2MASX J05210136-2521450       B ƒ#ÁÊæ¡CGëó=£×
+PKS 0521-36                   B¡{³ÂÕ›Cv[=£×
+IRAS 05218-1212               B¢àÁBªeBþ¹5=£×
+Paloma                        B¢AB*ýE?ØI™=£×
+PMN J0525-2338                B¢áÁ½7D“ª=£×
+PKS 0524-460                  B¢ÂøÂ7Ü]DÕ'=£×
+ESO 553- G 043                B£:#ÁªJîC =£×
+ESO 306-IG 001                B¤VÂN9C]êa=£×
+TV Col                        B¤¶FÂEˆAÜé=£×
+LMC X-4                       B¦j=Â„½²AÜé=£×
+RX J0531.2-6609               B¥œ]Â„<xA4š¶=£×
+2MASX J05325752+1345092       B¦z¶A\
+[CÁý =£×
+MCG -02-15-004                B¦êõÁU¯OCç&£=£×
+TW Pic                        B§lÂh¬@ Æº=£×
+SWIFT J053457.91+282837.9     B§{™AãÑNC]êa=£×
+Trapezium Cluster             B§£3À¬d?½“Ð=£×
+2MASX J05353211+4011152       B§Ä†B À,CÐ¦=£×
+SWIFT J0538.3+2147            B¨æ7A©|@7ö=£×
+LMC X-3                       B©xÂ€+B¢£4=£×
+LMC X-1                       B©Ò–Â‹|’AÝ‡=£×
+[HB89] 0537-286               B©óÐÁåRòDR?í=£×
+PSR B0540-69                  Bª}ÂŠ«kC4!=£×
+XMMU J054134.7-682550         BªÊ	ÂˆÜx@è¾=£×
+TX Col                        B««kÂ$ ª@1”N=£×
+MCG -05-14-012                B«ÆLÁÝ6BÏ¾=£×
+2MASX J05440009-4325265       B¬  Â-²-A¥ã=£×
+2MASX J05442257+5907361       B¬0.Bl¾C´ß=£×
+ESO 205-IG 003 NED01          B®7éÂ?	B~k=£×
+PKS 0548-322                  B¯VýÂ@”#=£×
+2XMM J055054.3-321616         B¯tÂÐD¦‹D=£×
+IRAS  05480+5927              B°;ÖBmæþA«›Ä=£×
+[HB89] 0552+398               B±Á¸BA/DJôº=£×
+2MASX J05580206-3820043       B³@ÂV¡Bê2=£×
+PKS 0558-504                  B³åÂIÊrCLß=£×
+IRAS 05581+0006               B´U=×ª¬B^éé=£×
+UGC 03386                     BµPöB‚¾C’¦{=£×
+2MASX J06054896-2754398       B¶èsÁßJ#AÄÛ=£×
+ESO 005- G 004                B¶ØÕÂ­CˆD6“ =£×
+2MASX J06100652-6243125       B¹íÂzábCAC=£×
+2MASX J06083867-6247168       B¸RoÂ{&éB¨Uà=£×
+AH Men                        B¹ÞÂ£¥B;Ôò=£×
+PMN J0612-4647                Bº8ÕÂ;%ãBWg8=£×
+2MASS J06141230+1704321       B»DAˆšÔ@ÚIg=£×
+Mrk 3                         B»Í‘BŽ3D i=£×
+2MASX J06230765-6436211       B¿sÂ6CGß=£×
+NVSS J062335+644538           B¿ÊòB…'@=ÁÞ=£×
+ESO 121-IG 028                B¿áHÂsêCGëó=£×
+ESO 426- G 002                B¿ãÂ ÝÌCß.Ä=£×
+SWIFT J062406.05-093855.0     BÀèÁ`¿@Ì'&=£×
+MU Cam                        BÀ¢œB“'®@’0í=£×
+2MASX J06262702+0727287       BÁ9§@î§ðC =£×
+6dF J0626586-370559           BÁ}	Âf C-ûM=£×
+UGC 03478                     BÄd¡B~±ÖBI#ô=£×
+SWIFT J063107.4+112754        BÃ¸A7p;B’°=£×
+VII Zw 073                    BÃ6B~¶cCç&£=£×
+1RXS J063401.1-744629         BÅXÂ•Œ¨C4!=£×
+CIZA J0635.0+2231             BÅ‡EA´33@wˆ|=£×
+PKS 0637-752                  BÅã:Â–ŠèC4!=£×
+1RXS J063631.9+353537         BÆDB_Ü@è¾=£×
+ESO 490-IG026                 BÈïÁÏ)ÇBí³=£×
+SWIFT J064013.50-474132.9     BÈûÂ>ÅDR?í=£×
+2MASX J06403799-4321211       BÈQÂ-lWDa£Ã=£×
+UGC 3533                      BË8»BTMŸCGß=£×
+Mrk 6                         BÎ*B”Ú­CNÿ=£×
+1WGA J0654.5+0703             BÏHK@á´¢Bö2=£×
+UGC 03601                     BÏé­B  4CØ¬=£×
+2MASX J06561197-4919499       BÐ„ÂER}C´ß=£×
+Bullet Cluster                BÑ>OÂ_Ï«A¥ã=£×
+2MASX J06591070+2401400       BÑ–ÉAÀ8ïBÏ¾=£×
+2MASX J07011026-3234534       BÒ•ÝÂS[B5=£×
+1RXS J070407.9+262501         BÔÚAÓUçB³Ä=£×
+1RXS J070648.8+032450         BÕh
+@Zn˜A¥ã=£×
+VII Zw 118                    BÕœB3C¢ÚÉ=£×
+2MASX J07084326-4642494       BÖ\PÂ:ÚÔCp„=£×
+PKS 0706-15                   BÖš0Áw3ŽA#Bö=£×
+PKS 0707-35                   BÖžÂ?C’¦{=£×
+2MASX J07103005+5908202       B×@'BlŽVBf°€=£×
+MCG +06-16-028                BÙ<BûCÈçy=£×
+Mrk 376                       BÙ 'B6Ë’BI#ô=£×
+SWIFT J0714.7-2521            BÙ`,ÁÊÄÁC»P\=£×
+1RXS J071748.9-215306         BÚæéÁ¯@¬»<=£×
+RX J0718.0+4405               BÛ;B0]CØ¬=£×
+1RXS J072352.4-080623         BÝñ ÁªeD˜=£×
+PKS 0723-008                  BÞì¿jkQDr+g=£×
+CGCG 147-020                  BÞÏ¸Aï¡ÿB¨Uà=£×
+2MASX J07262635-3554214       Bß87ÂŸÆDö*=£×
+2MASX J07263532+3700028       BßKdB ÅBWg8=£×
+1RXS J072720.8-240629         BßÊKÁÀÔÊC’¦{=£×
+4U 0728-25                    BàrTÁÐÝd?ØI™=£×
+BG CMi                        Bá½ÙAš?·p=£×
+1RXS J073308.7+455511         Bâ“œB7¬qBÏ¾=£×
+2MASX J07332681+5153560       Bâ¹1BO˜yA¹¹=£×
+Mrk 9                         BäyŽBkãBˆñ6=£×
+2MASX J07394469-3143024       BåßQÁý½(CˆÃ3=£×
+2MASX J07410919-5447461       Bæ“©Â[/5CNÿ=£×
+3C 184.1                      Bç‚»B á›D°ó=£×
+Mrk 79                        BçEþBG="Bö2=£×
+Mrk 78                        BçYB‚Z©C®¦å=£×
+LEDA 86073                    BçŸpÁÎxBº«=£×
+UGC 03995A                    Bè+Aéþ…CÈ?=£×
+1RXS J074616.8-161127         Bé#×Á†ÂAtä=£×
+B2 0743+25                    Bé72AÎ‰ÕD²Ë‚=£×
+PKS 0745-19                   BéÂÔÁšZþ<!xy=£×
+Mrk 10                        Bé¾(Bs»çBÝÓH=£×
+2MASX J07473839-7325533       BéÑÖÂ’ÜæC]êa=£×
+EXO 0748-676                  BêGÂ‡€ B„QV=£×
+SWIFT J074940.0-321536        BêÄ3Â
+#AÄ=£×
+PQ Gem                        Bë¥Ak×Ü@Ó®=£×
+2MASX J07521780+1935423       Bì&AœÂ»BÏ¾=£×
+B3 0749+460A                  Bì^JB7ÌD˜=£×
+1RXS J075813.2+835637         Bï)B§ã B®<=£×
+2MASX J07595347+2323241       BïòA»íCÈçy=£×
+IC 0486                       Bð,ÀAÔèsCˆÃ3=£×
+SWIFT J080040.2-431107        BðU¨Â,½¿A™¹=£×
+2MASX J08032736+0841523       BñºkA*0Bn½U=£×
+Mrk 1210                      Bò~@£¤@Bí³=£×
+MCG +02-21-013                BòbòA,mtCÁý =£×
+2MASX J08045299-0108476       Bòq¿’ÃÊD	Âï=£×
+CGRaBS J0805+6144             Bò¦ÈBvõ­D¦‹D=£×
+Mrk 622                       Bó×‹BQBÝÓH=£×
+PG 0804+761                   Bõ|îB˜
+Aùf£=£×
+1RXS J081215.2-400336         Bö iÂ =qCˆÃ3=£×
+CGCG 031-072                  B÷6@ŠõMCVS=£×
+1RXS J081749.0+025104         Bøèö@6e
+BåŸ¾=£×
+2MASX J08181469+0122266       Bù;?¯ß;CÁý =£×
+RX J0818.9-2252               Bù{dÁ·CBø=£×
+1RXS J082033.6-280457         BúGåÁà¨öBn½U=£×
+Fairall 272                   Bû‚[Àê³CÐ¦=£×
+1RXS J082623.5-703142         Bý2 Â}@Q =£×
+2MASX J08294266+4154366       BþÛB'¤
+C-ûM=£×
+2MASX J08301655-6725289       Bÿ#IÂ†ÙyB5ƒÞ=£×
+FBQS J083225.3+370736         C #B‚Bö2=£×
+EI UMa                        C—sBB‰AN©Ì=£×
+3C 206                        CõþÁCâ‚CØ¬=£×
+4C +29.30                     C†AîŠ
+C„=£×
+LM Vel                        C2øÂ4;ÍA#Bö=£×
+[HB89] 0836+710               CYüBÊKDÌž=£×
+2MASX J08420557+0759253       C…ò@ÿ±­CØ¬=£×
+2MASX J08434495+3549421       CïþBP6CGß=£×
+1RXS J084521.7-353048         CW$ÂŸBþ¹5=£×
+2MASX J08451850+1420345       CSÃAe|CGß=£×
+SWIFT J085429.35-082428.6     CŸ;Á†YC’¦{=£×
+MCG +11-11-032                CÍfB€Ê¹C =£×
+2MASX J08551746-2854218       CÒ£Áç?HAA0Š=£×
+NGC 2655                      Cè?Bœr8C¢ÚÉ=£×
+NGC 2712                      Cà‚B3§ÕB~k=£×
+Mrk 18                        C~5Bp›¦D“ª=£×
+NGC 2788A                     C©üÂˆt9D i=£×
+2MASX J09034285-7414170       CíÀÂ”yêDJôº=£×
+2MASX J09043699+5536025       C'mB^g8C4!=£×
+ABELL 754                     C	5mÁ/ƒ>®DE=£×
+1RXS J090915.6+035453         C	Pý@z\GCGß=£×
+2MASX J09112999+4528060       C	ßùB5ßŠB—Ò=£×
+2MASX J09172716-6456271       C]Âá¹C’¦{=£×
+Mrk 704                       C›ÀA‚qABÏ¾=£×
+SBS 0915+556                  CÎB]ÜtC"PÚ=£×
+IC 2461                       CýôBÃ–Bþ¹5=£×
+MCG -01-24-012                C1UÁ åÉB"§=£×
+PKS 0921-213                  CéyÁ¬ÅmBÁ7Ø=£×
+MCG +04-22-042                CíàA·E¢Cv[=£×
+2MASX J09235371-3141305       CùRÁý‰A4š¶=£×
+2MASX J09261742-8421330       C’ÔÂ¨·÷BRµ=£×
+Mrk 110                       CM¹BQ%,Bþ¹5=£×
+2MASX J09254750+6927532       Cr·BŠíúBˆñ6=£×
+Mrk 705                       Cƒ‚AK¿±BÈ  =£×
+NGC 2885                      CÓ¾A¸),D††=£×
+SWIFT J092752.58-694438.8     CøÂ‹|ü@œF =£×
+CGCG 312-012                  ChbBz-CGß=£×
+SWIFT J093118.1-510845        CÓMÂL•MA4š¶=£×
+ESO 565- G 019                C®wÁ¯l&D ½a=£×
+2MASX J09352707+2617093       CÜçAÒIÊB"§=£×
+MCG +10-14-025                C÷BuiBÈ  =£×
+2MASX J09360622-6548336       C«ÂƒžZCˆÃ3=£×
+1RXS J093949.2-322620         Cô{ÂÁ‘?	ZŽ=£×
+CGCG 122-055                  C…A½{kDCëQ=£×
+NGC 2992                      ClÚÁe8ïC-ûM=£×
+3C 227                        Cð!@í„MCp„=£×
+VII Zw 292                    CpåB’záCLß=£×
+NGC 3035                      Cú³ÀÚU2C¢ÚÉ=£×
+M 81                          CãTBŠ!HB¢£4=£×
+M 82                          CøRB‹[¦@D(Û=£×
+NGC 3081                      CßƒÁ¶œCCBø=£×
+NGC 3080                      CûAP³~B5=£×
+2MASX J09594263-3112581       Cí~ÁùºÓBÁ7Ø=£×
+3C 234.0                      CtÓAæI^B5=£×
+NGC 3079                      C}¥B^¸C´ß=£×
+ESO 374- G 025                CÙ/Â•]B´W¯=£×
+ESO 499- G 041                C{Á¸tŸC-ûM=£×
+1RXS J100712.6+653511         CÎ‘Bƒ*ÎCp„=£×
+2MASX J10084862-0954510       C3×Á CˆÃ3=£×
+ESO 374- G 044                CU?ÂîID0@Q=£×
+2MASX J10171680-0404558       CQñÀ‚¡UD$Bˆ=£×
+SDSS J102103.08-023642.6      CCMÀ''»B´W¯=£×
+2MASX J10195855-0234363       Cþ}À$è§B’°=£×
+ARK 241                       CjìÀ]„CˆÃ3=£×
+NGC 3227                      CàAžëºC}=£×
+ESO 317- G 038                Cp§ÂdìCÈçy=£×
+ESO 317- G 041                CØ©Â(>BÝÓH=£×
+2MASX J10311847+5053358       CÓÀBK’¼@C	=£×
+2MASSi J1031543-141651        CùïÁd~‘Bº«=£×
+NGC 3281                      C÷Âj0C:=£×
+ESO 436- G 034                C/}ÁäáeC(ð=£×
+CGCG 333-038                  C™B’%C„=£×
+SDSS J103315.71+525217.8      CPßBS|…B—Ò=£×
+RX J1039.7-0507               CòÀ£·é@§.=£×
+2MASX J10410120-1734300       C AHÁŒ™eBˆñ6=£×
+SDSS J104208.36+004206.1      C ˆï?3¢œC÷ö=£×
+SDSS J104326.47+110524.2      C Ü=A1pòC÷ö=£×
+MCG +12-10-067                C!	BŒÏ‹CAC=£×
+MCG +06-24-008                C!4<B¹YD†¤·=£×
+UGC 05881                     C!­PAÏsMC:=£×
+NGC 3393                      C"ÁÉKäD°ó=£×
+Mrk 417                       C"a A··C—Ü½=£×
+NGC 3431                      C"ÐÁˆqE5Õ=£×
+2MASX J10513744-1707292       C"çöÁˆÿ—=‡=£×
+2MASX J10523297+1036205       C##A)²-Cß.Ä=£×
+2MASX J10594361+6504063       C$îyB‚#CÐ¦=£×
+Mrk 728                       C%AæA0À/DYÎ·=£×
+FBQS J110340.2+372925         C%êõBö%C¨¦*=£×
+2MASX J11033765-2329307       C%èÁ»ïžBê2=£×
+Mrk 421                       C&"BÕÐA¤ù=£×
+CGCG 291-028                  C&~óBkÈ´Bˆñ6=£×
+2MASX J11053754+5851206       C&h$BklPD°ó=£×
+NGC 3516                      C&²ªB‘# CVS=£×
+ESO 438- G 009                C'³3ÁäA@²™1=£×
+IC 2637                       C(tþA`BC4!=£×
+NGC 3588 NED01                C(‚¢A£%C =£×
+MCG +13-08-056                C(®ÖBŸt
+DiÁÃ=£×
+MCG +09-19-015 NED02          C(ÕSBYPC]êa=£×
+SBS 1116+518                  C)èŽBN7œD°ó=£×
+ESO 265- G 023                C*36Â-VBÝÓH=£×
+PSR J1124-5916                C+)ÐÂmxBn½U=£×
+ARP 151                       C+f”BY‡¯CLß=£×
+Mrk 423                       C+³½B áC¨¦*=£×
+2MASX J11271632+1909198       C+Ñ[A™>«C(ð=£×
+PKS 1127-14                   C,‡‡Ám0UC¨¦*=£×
+2MASX J11315154-1231587       C,ö÷ÁH†ÂBÈ  =£×
+NGC 3718                      C-%,BTEˆBþ¹5=£×
+IC 2921                       C-4A$¾XCLß=£×
+[HB89] 1130+106               C-?vA&RTF ƒÁ=£×
+2MASX J11363009+6737042       C. B‡<]B)„µ=£×
+Mrk 739E                      C.;A¬ÄœB)„µ=£×
+2MASX J11383367+2523532       C.£øAË/OCmì=£×
+SDSS J113915.13+253557.9      C.Ð'AÌË’B5ƒÞ=£×
+SBS 1136+594                  C.ÉyBlËÇCØ¬=£×
+HE 1136-2304                  C.¶‚ÁºáHC¢ÚÉ=£×
+NGC 3783                      C.ÁØÂôTCÈ?=£×
+GT Mus                        C.ß‘Â‚Ë¨>®DE=£×
+NGC 3786                      C.íPAÿE¢D˜=£×
+PG 1138+222                   C/Q=A¯ƒÞCß.Ä=£×
+NGC 3822                      C/‹ÚA$qÞBö2=£×
+DO Dra                        C/èéB`Å@7ö=£×
+KUG 1141+371                  C0¾B‹DDJôº=£×
+UGC 06728                     C0QBŸ\îB—Ò=£×
+2MASX J11454045-1827149       C0k)Á“¢hCGß=£×
+MCG +10-17-061                C0cYBké–CLß=£×
+2MASX J11475508+0902284       C0úÁA©[B’°=£×
+MCG +05-28-032                C11Aí!-D ô=£×
+2MASX J11491868-0416512       C1SíÀˆü•BåŸ¾=£×
+SDSS J114921.52+532013.4      C1VõBUY&A›=£×
+PG 1149-110                   C2ÈÁ5ùŠB„QV=£×
+MCG -01-30-041                C2(´À¦Ÿ¾CNÿ=£×
+4C +49.22                     C2ZBFD$Bˆ=£×
+NGC 3998                      C3{áB]Ð}Bö2=£×
+IC 0751                       C3¸B*GýC÷ö=£×
+2MASSi J1159410-195924        C3ë¼ÁŸë…D ô=£×
+2MASX J12005792+0648226       C4=Æ@ÙÎC4!=£×
+Mrk 1310                      C4OPÀkeªBÈ  =£×
+NGC 4051                      C4ÊDB2 BWg8=£×
+ARK 347                       C5«A¢‡”Cïh,=£×
+GQ Com                        C5,êAß9íBÖK“=£×
+UGC 07064                     C5.:AùkDzâé=£×
+2MASX J12055599+4959561       C5{ÀBGþïD i=£×
+NGC 4102                      C5˜§BR×öCç&£=£×
+B2 1204+34                    C5ãBƒE#‚=£×
+Mrk 198                       C6OB<;³CÈ?=£×
+NGC 4138                      C6_ÅB.½¿C¨¦*=£×
+2MASX J12100404-4636274       C6„LÂ:n*D†¤·=£×
+NGC 4151                      C6¢½BŸpC =£×
+KUG 1208+386                  C6¯BXCØ¬=£×
+2MASX J12111425-3933268       C6Ï9Â:ÓCž™=£×
+IGR J12123-5802               C7RÂh0B/i¹=£×
+NGC 4180                      C7C@á7LD“ª=£×
+CGCG 187-022                  C7IïBb·C¢ÚÉ=£×
+B2 1210+33                    C7DB,¦D˜=£×
+2MASX J12135456-0530193       C7z8À°,`B¨Uà=£×
+Was 49b                       C7“-Aì>BC-ûM=£×
+ESO 505-IG 030                C8<îÁÑ¬¥C4!=£×
+NGC 4235                      C8JŒ@æ!–CGëó=£×
+Mrk 766                       C8œJAî€ÒAñ=£×
+M 106                         C8½VB=7LC„=£×
+FBQS J1221+3010               C9WgAñjr@Xµ0=£×
+Mrk 205                       C9níB–ŸB5ƒÞ=£×
+4C +04.42                     C9˜@‡@DÎû=£×
+Mrk 50                        C9ÙÁ@+v`CLß=£×
+PG 1222+216                   C::A«	SC¢ÚÉ=£×
+NGC 4388                      C:qÞAJ—öC¨¦*=£×
+NGC 4395                      C:t,B/ìCÈ?=£×
+3C 273                        C;G$@Z†C»P\=£×
+1RXS J123113.2-423524         C;ÎÂ*\)Bþ¹5=£×
+NGC 4500                      C;×£BgÛÊBn½U=£×
+2MASX J12313717-4758019       C;çzÂ?ÞjC»P\=£×
+Mrk 771                       C<×A¡CÊCÁý =£×
+1RXS J123212.3-421745         C<âÂ)1.C¢ÚÉ=£×
+NGC 4507                      C<çÂ£ CeÇ!=£×
+V1025 Cen                     C=‘ŠÂÙó@è¾=£×
+VCC 1759                      C=—ãAtCBø=£×
+ESO 506-G027                  C=º=ÁÚv`CÁý =£×
+LEDA 170194                   C=ÆµÁpC¢ÚÉ=£×
+NGC 4593                      C=êÀ«Cv[=£×
+Mrk 653                       C=÷BæLB’°=£×
+NGC 4619                      C>o‚B@WCç&£=£×
+ESO 381- G 007                C>2ÂG®C]êa=£×
+KUG 1238+278A                 C>1ƒAÜ…Aá0¾=£×
+1H 1249-637                   C>µÂ|;d@ñ]O=£×
+NGC 4686                      C?ª†BZ#Cß.Ä=£×
+NGC 4748                      CAJÁV¢´C}=£×
+EX Hya                        CA	Áéþ(>ù#B=£×
+ESO 323-32                    CAUÃÂ&ŒJDYÎ·=£×
+6dF J1254564-265702           CA¼Á×š®C:=£×
+3C 279                        CBçÀ¹AòDR?í=£×
+Coma Cluster                  CBóþAßØy>‚3ï=£×
+2MASX J13000533+1632151       CC¶A„L¯D6“ =£×
+Mrk 783                       CC¾¸AƒC–B’°=£×
+SBS 1301+540                  CCÿpBW*³C4!=£×
+NGC 4941                      CDÀ±¦ÌCv[=£×
+NGC 4939                      CDYÁ%oC¢ÚÉ=£×
+PKS 1302-102                  CDc7Á(âçC}=£×
+ESO 323-077                   CD›áÂ!¨B®<=£×
+ESO 323- G 081                CDÌçÂ!¡bDYÎ·=£×
+NGC 4992                      CEE÷A:%FCÈçy=£×
+2MASX J13103701-5626551       CE§€ÂaËDBí³=£×
+2MASX J13105723+0837387       CE½A
+	lCGß=£×
+II SZ 010                     CFF*Á2BÏ¾=£×
+RX J1313.8+3653               CFt;B™BÈ  =£×
+NGC 5033                      CF]qB_;BP%÷=£×
+UGC 08327 NED02               CFÒoB1 ßBI#ô=£×
+2MASX J13165424-7155270       CG9æÂÙ0B¨Uà=£×
+NGC 5100 NED02                CH?‘A§C»P\=£×
+MCG -03-34-064                CHšÁ…Ô,BºÊ=£×
+Cen A                         CI]wÂ,Cmì=£×
+ABELL 1736                    CJgÁÚcˆBÏ¾=£×
+ESO 509- G 038                CJÎÔÁË8äC„=£×
+PKS 1329-049                  CKÃÀ¥/E‡.=£×
+ESO 021- G 004                CK+QÂ›°uC÷ö=£×
+ESO 383-18                    CK\)ÂbAGÏô=£×
+ESO 509-IG 066                CKªHÁ»’}Cp„=£×
+NGC 5231                      CKóu@?ïžCØ¬=£×
+MCG -06-30-015                CKù_Â	.²B
+‹=£×
+[HB89] 1334-127               CLjoÁOOKAA0Š=£×
+NGC 5252                      CL‘@‘\ûC—Ü½=£×
+2MASX J13411287-1438407       CMMÄÁjPMBÁ7Ø=£×
+NGC 5283                      CMF%B‡X8C-ûM=£×
+Mrk 268                       CMKáAóeBí³=£×
+NGC 5273                      CMˆåBêDr+g=£×
+CGCG 102-048                  CN¸AœˆšD	Âï=£×
+NGC 5290                      CNTuB&Ù¯CÐ¦=£×
+2MASX J13462846+1922432       CNžPA›‡Bßæ=£×
+2MASSi J1346085+732053        CNˆýB’²2AÝ‡=£×
+ABELL 3571                    CNÞàÂv”>VƒV=£×
+SWIFT J1347.7+0212            CNÚ@öA½ÿŸ=£×
+IC 4329A                      COTÁòy§Bö2=£×
+UM 614                        COxX@ùC"PÚ=£×
+2MASX J13512953-1813468       COßvÁ‘ÖmBºÊ=£×
+Mrk 279                       CPC°BŠÌCVS=£×
+2MASX J13532820-1123055       CP^Á6(ØCÐ¦=£×
+TOLOLO 00113                  CPbÂ C-ûM=£×
+2MASX J13542913+1328068       CPŸ!AWÌCØ¬=£×
+2MASX J13553383+3520573       CPäBeÉAÙ©=£×
+Mrk 464                       CPùBLdC4!=£×
+Mrk 463                       CQA’úCØ¬=£×
+ESO 578- G 009                CQ'$Áœ;ÍBºÊ=£×
+[CG2001] G311.45-0.13         CS!-Âw(§C´ß=£×
+2MASX J14080674-3023537       CT9Áó/¬Bf°€=£×
+V834 Cen                      CTGðÂ5&é>†{¹=£×
+2MASX J14104482-4228325       CT¯ÒÂ)ç8AÝ‡=£×
+NGC 5506                      CUOÙÀMG®BÖK“=£×
+2MASX J14165001-1158577       CV5ZÁ?¹õBP%÷=£×
+2MASX J14174289+6141523       CVmÌBvÊ¦B¢£4=£×
+[HB89] 1415+259               CV|jAÍÊÁA]†=£×
+NGC 5548                      CVƒAÉ+CeÇ!=£×
+Rabbit                        CV­°ÂsÞ¸B’°=£×
+ESO 511-G030                  CV×éÁÕ(XBí³=£×
+PSR J1420-6048                CWÈÂs7éBI#ô=£×
+SBS 1419+480                  CW_ÌB?)*BåŸ¾=£×
+NGC 5610                      CXmAÄêbCÈ?=£×
+ABELL 1914                    CXƒ-BMj<™-=£×
+Mrk 813                       CXÚ Až¥ãCLß=£×
+1ES 1426+428                  CY"×B*°ŠA·¨A=£×
+Mrk 1383                      CYG?¤8B´W¯=£×
+Mrk 684                       CYÅAâLdC®¦å=£×
+NGC 5674                      CZwº@®©ÞBö2=£×
+NGC 5683                      CZ·òBB¥ÍB¢£4=£×
+Mrk 817                       C[Bk-]C}=£×
+2MASX J14364961-1613410       C[4èÁÓC»P\=£×
+2MASX J14391186+1415215       C[Ì¬AdüCç&£=£×
+Mrk 477                       C\(¡BV†CGëó=£×
+NGC 5728                      C\™†ÁŠŽC¢ÚÉ=£×
+CGCG 164-019                  C]gLAØGED††=£×
+SWIFT J144719.3-581616        C]Ô•ÂiµB;Ôò=£×
+SWIFT J1448.4-5945            C^-·ÂnÑ
+?D±=£×
+2MASX J14545815+8554589       C_½¥B«Õ2CÈçy=£×
+2MASX J14530794+2554327       C_H†AÏEÖCˆÃ3=£×
+3C 309.1                      C`ÈBX)Cïh,=£×
+Mrk 841                       CbHA';Bº«=£×
+Mrk 1392                      Cb|j@m?}C®¦å=£×
+2MASX J15064412+0351444       Cb¯@w+C =£×
+Mrk 1393                      Cc9Œ¾I®ÕC®¦å=£×
+ABELL 2029                    Cc»º@·Ô•?|í=£×
+2MASX J15115979-2119015       CcÿÊÁª‰}CVS=£×
+NVSS J151148-105023           CcóøÁ-p;4 "Å=£×
+2MASX J15120505-1046356       CdgÁ,lôC4!=£×
+PKS 1510-08                   Cd5êÁ™šD›$=£×
+2MASX J15144217-8123377       Cd¬ÓÂ¢É­C„=£×
+NGC 5899                      CdÃuB(3CAC=£×
+CGCG 319-007                  CeãîBƒ2þCAC=£×
+2MASS J15213967+0337292       CfjQ@güÒBí³=£×
+4C +63.22                     CfðíB~ B®<=£×
+2MASX J15295830-1300397       Ch~5ÁP-B³Ä=£×
+MCG -01-40-001                CiVÁ5?BÖK“=£×
+Mrk 290                       Ci÷ÜBgœCBö2=£×
+2MASX J15422399-1411055       Ck™“ÁbõZAt¨J=£×
+2MASX J15462424+6929102       Cl™ôBŠøãC¢ÚÉ=£×
+3C 323.1                      ClîpA¦øl@Ì'&=£×
+SWIFT J1548.1-6406            ClÜ~Â€m¹C×}ø=£×
+NGC 5995                      Cm Á\óCLß=£×
+4C +23.42                     Cnn€A¾tåBßæ=£×
+SDSS J155334.73+261441.4      CneAÑõZC(ð=£×
+PKS 1549-79                   Co>ËÂžxB
+‹=£×
+H 1553-542                    Cos‚ÂY¨ö>Šçý=£×
+ABELL 2142                    Co‘4AÙËû?8>=£×
+T CrB                         Coà.AÏ\’AËZª=£×
+2MASX J16071388+4833266       CqÎÙBB:¬DÕ'=£×
+LEDA 100168                   CqÙXBª\Cß.Ä=£×
+Mrk 876                       Cs|þBƒpLB®<=£×
+3C 332                        Ctm\B]C´ß=£×
+CGCG 367-009                  CtÔˆB¢ÏCBø=£×
+Sco X-1                       CtúÁÁz>B:q®•=£×
+87GB 162418.8+435342          CvypB/!ÕC}=£×
+PKS 1622-29                   Cv†lÁîÜ%D	Âï=£×
+SWIFT J1626.6-5156            Cv¦¨ÂOÅm>ù#B=£×
+VII Zw 653                    Cv[©BªýfC]êa=£×
+Mrk 1498                      CwTBOBåŸ¾=£×
+Mrk 885                       CwsxB†Á­D¿ôï=£×
+2MASX J16303265+3923031       Cw¢ÖB‰nC¨¦*=£×
+2MASX J16311554+2352577       CwÐA¿£AËZª=£×
+NGC 6232                      CzÕ•BC×D“ª=£×
+3C 345                        Cz¾¸B=¿DåO/=£×
+LEDA 214543                   C|­˜@“\)CÁý =£×
+UGC 10593                     C}øB_ŸCB®<=£×
+NGC 6240                      C}>Ó@¨XC’¦{=£×
+2MASX J16531506+2349431       C}PA¾ ùB¨Uà=£×
+Mrk 501                       C}wµB
+rAÒbU=£×
+Her X-1                       C~u%B^ž?ÿ=£×
+ABELL 2256                    CîfBo\>dÒö=£×
+4U 1700+24                    C€RhA¿Æ?A±‡q=£×
+2MASX J17085915+2153082       C€ŸŠA¯®BÏ¾=£×
+ARP 102B                      Cç»BCëîBí³=£×
+1RXS J172032.0-514414         C‚ÂNòåA•Ú›=£×
+RBS 1640                      C‚AB-ÔC®¦å=£×
+4C +34.47                     C‚kB	2 B"§=£×
+2MASX J17232321+3630097       C‚laBÞC(ð=£×
+2MASX J17311341+1442561       Cƒg$Akr°Bn½U=£×
+2MASX J17333689+3631319       Cƒ³¬BD°ó=£×
+PKS 1737-60                   C„Á1Âs°UB´W¯=£×
+4C +18.51                     C„ÃºA“¥FDiÁÃ=£×
+CGCG 300-062                  C„éGB{[YCGëó=£×
+1RXS J174538.1+290823         C…4ZAé¸CGëó=£×
+Mrk 507                       C…”wB‰h©Bº«=£×
+VII Zw 742                    C…_éB‰8lCp„=£×
+1A 1744-361                   C…Š=Â{ç>áøA=£×
+2MASX J17515581-6019430       C…ýÃÂqP}CØ¬=£×
+NGC 6552                      C‡ãB…:ìC»P\=£×
+tet Ara                       C‡Ô3ÂH]¬CØ¬=£×
+V426 Oph                      C‡û”@»¡?8>=£×
+UGC 11185 NED02               C‰=B*¤±C’¦{=£×
+AM Her                        C‰BGx©@&0Ú=£×
+H 1821+643                    C‰¾‘B€¯ÒBv=£×
+2MASX J18212680+5955209       C‰®SBo°¤D¹Aæ=£×
+IC 4709                       CŠ
+XÂazCGß=£×
+2MASX J18241083+1846088       CŠÇA–'CVS=£×
+VII Zw 800                    CŠK{BMB´W¯=£×
+2MASX J18263239+3251300       CŠQHBnïC¢ÚÉ=£×
+3C 380                        CŠ°åBBûçD*&+=£×
+2MASX J18305065+0928414       CŠÛA§>I=£×
+Fairall 49                    C‹ŸÂmœAÙ©=£×
+ESO 103-035                   C‹ÊÛÂ‚ÚîB´W¯=£×
+SWIFT J183905.82-571507.6     C‹ã^Âe“BRµ=£×
+SWIFT J1842.2-1124            CŒEÁ7(ÊBþ¹5=£×
+3C 390.3                      CŒDÍBŸŠõC}=£×
+Fairall 51                    CŒœÊÂyuŽBÏ¾=£×
+CGCG 341-006                  CŒ­þB^BºÊ=£×
+SWIFT J185024.2+842240        CLîB¨ÁrBv=£×
+1RXS J184642.2+842506         CŒÛöB¨Ö3F¥ß§=£×
+2MASX J18470283-7831494       CŒáƒÂ‘BåŸ¾=£×
+NOVA Aql 1918                 C?‰¸>áøA=£×
+SWIFT J185249.5+300428        CšhAð˜ÈC"PÚ=£×
+ESO 025- G 002                CÕ~ÂËúC4!=£×
+SWIFT J1855.5+0516            Cî9@ª¬ÚDÿ)Û=£×
+XTE J1856+053                 CŽÜ@©æ›C =£×
+2MASX J18564935-5442298       CŽXÂZÕMCGß=£×
+2MASX J18570768-7828212       CŽ$"ÂœñìCÈ?=£×
+UGC 11397                     CŽú7B`÷CÐ¦=£×
+CGCG 229-015                  C-ÖB)ØBþ¹5=£×
+ESO 231- G 026                C'ßÂH»ODiÁÃ=£×
+PKS 1916-300                  CîðÁïÁUA·¨A=£×
+ESO 141- G 055                C‘'Âj®cBåŸ¾=£×
+ABELL 2319                    C‘.B/Øü?2Q¡=£×
+SWIFT J1922.7-1716            C‘S½ÁŠFB—Ò=£×
+CH Cyg                        C‘‘£BH÷2?‘º=£×
+2MASX J19250215+5043134       C‘¡*BJá±CGß=£×
+2MASX J19263018+4133053       C‘ÐB&4§BWg8=£×
+4C +73.18                     C‘ùÛB“ïCNÿ=£×
+SWIFT J192955.7+181839        C’=µA’|Z@—%«=£×
+2MASX J19380437-5109497       C“BWÂL§µBI#ô=£×
+IGR J19405-3016               C“ˆÁò~Bö2=£×
+SNR G068.8+02.6               C•‘B·éCLß=£×
+V2306 Cyg                     C•Ç»B.@ÚIg=£×
+4U 1957+115                   C•ìéA;X@œF =£×
+QSO B1959+650                 C•ÿìB‚LA•Ú›=£×
+2MASX J20005575-1810274       C–·Á‘dóC}=£×
+SWIFT J200622.36+364140.9     C–ÌBÆâB5ƒÞ=£×
+2MASX J20063331+5620364       C–ÑÇBa_¾BI#ô=£×
+ESO 399-20                    C–ÞwÂ
+1'BWg8=£×
+NGC 6860                      C—Âtf›Cp„=£×
+PKS 2005-489                  C—-‹ÂCSB¢£4=£×
+1RXS J201020.0-252356         C—JŽÁË2†C"PÚ=£×
+2MASX J20101740+4800214       C—IHB@C×}ø=£×
+PKS 20008-159                 C—haÁ|rD6“ =£×
+ABELL 3667                    C—ÂcD?2Q¡=£×
+2MASX J20145928+2523010       C—ßžAËCÁý =£×
+PKS 2014-55                   C˜@¤Â^¢ÑC„=£×
+1RXS J202400.8-024527         C™ oÀ0záBv=£×
+II Zw 083                     C™]ÍÀÃ"BI#ô=£×
+2MASX J20293125-6149087       C™°«ÂwF¾CVS=£×
+IRAS  20247-7542              C™Ö9Â—$BÈ  =£×
+SWIFT J2034.0-0943            Cš@çÁÔ BRµ=£×
+2MASX J20350566+2603301       CšcAÐwwBÏ¾=£×
+ESO 234- G 050                Cš~àÂHÄêBÝÓH=£×
+ESO 234-IG 063                C›eÂM¸AÙ©=£×
+4C +74.26                     C›SäB–DœB´W¯=£×
+Mrk 509                       C›…2Á+“uBö2=£×
+1RXS J204826.8+381120         CœLBÁ‰A«›Ä=£×
+IC 5063                       CœAÂdFtCVS=£×
+PKS 2052-47                   C»Â<ü…C´ß=£×
+SWIFT J205915.84+430109.5     Ch†B,uAÄ=£×
+SWIFT J210001.06+430209.6     C€B,$ÝDJôº=£×
+SWIFT J2102.6-2810            CÌ¬ÁáfCNÿ=£×
+2MASX J21090996-0940147       Cž¥QÁ»dAÒbU=£×
+B2 2107+35A                   Cž±B2„AŒm=£×
+2MASX J21140128+8204483       CŸ@¡B¤)CNÿ=£×
+CD Ind                        CŸs©ÂjÊÑA‚â;=£×
+2MASX J21161028+2517010       CŸ…zAÊDÐB®<=£×
+3C 433                        C wÂAÈ\Bº«=£×
+SDSS J212412.43+050243.6      C †¡@¡t¼A.  =£×
+PKS 2126-15                   C¡&}ÁzP±CÈçy=£×
+4U 2129+12                    C¡?AB­¬AŒm=£×
+6dF J2132022-334254           C¡-ÂÜ)CNÿ=£×
+2MASX J21344509-2725557       C¡ØÁÛtèCLß=£×
+1RXS J213623.1-622400         C¢TÂy™ÎBÖK“=£×
+IRAS F21329-6451              C¢ÂD²Cž™=£×
+PKS 2135-14                   C¢8ÁhÈCž™=£×
+CGCG 493-002                  C¢QËB W
+Bþ¹5=£×
+1RXS J213944.3+595016         C¢w BoYâA•Ú›=£×
+RX J2145.5+1102               C£1~A0ÇeCp„=£×
+PKS 2145+06                   C£‚é@Þ¾?C—Ü½=£×
+NGC 7130                      C£ŠhÂÎCÐ¦=£×
+6dF J2149581-185924           C£¾÷Á—ëhB¢£4=£×
+PKS 2149-306                  C£ýŸÁó¸DJôº=£×
+2MASX J21561518+1722525       C¤ˆA‹çCˆÃ3=£×
+PKS 2153-69                   C¤£1Â‹a<CˆÃ3=£×
+EUVE J2157-06.1               C¤®tÀÅ‡fBB^ñ=£×
+Mrk 520                       C¥A(Ö¡BÝÓH=£×
+87GB 215950.2+503417          C¥78BKC=CÁý =£×
+NGC 7172                      C¥AÁþõZC„=£×
+4C +31.63                     C¥gðAþ‡CNÿ=£×
+2MASX J22041914+0333511       C¥Š:@drBÖK“=£×
+NGC 7212 NED02                C¥áA#¼CAC=£×
+NGC 7214                      C¦$ÁÞyÌD‹~è=£×
+NGC 7213                      C¦(ªÂ<ª³C]êa=£×
+II Zw 171                     C¦|¾A•“ÕCv[=£×
+RU Peg                        C¦Á\AK@?«Á=£×
+2MASX J22140917-2557487       C¦ÄäÁÏµzBI#ô=£×
+Mrk 304                       C§&ŠAcÓ€Bßæ=£×
+FO AQR                        C§=‘Áží@&0Ú=£×
+1RXS J221832.8+192527         C§QvA›a@JÇÀ=£×
+2MASX J22194971+2613277       C§z‰AÑË’Cv[=£×
+MCG +02-57-002                C§øA=`BBÏ¾=£×
+3C 445                        C§úrÀžCØ¬=£×
+MCG +06-49-019                C¨cBrCD0@Q=£×
+PKS 2227-088                  C¨µaÁÆxDÌž=£×
+[HB89] 2230+114               C©kA;±[D“ª=£×
+ESO 533- G 050                C©Z“ÁÍjbD˜=£×
+NGC 7314                      C©x§ÁÐgC4!=£×
+NGC 7319                      C©åBçCïh,=£×
+SWIFT J223703.9+632338        C©“áB}÷™@=ÁÞ=£×
+IC 5233                       C©‘‰AÎBº«=£×
+Mrk 915                       C©˜ÎÁH¹$Cß.Ä=£×
+MCG +01-57-016                Cª	A ÜÔBÁ7Ø=£×
+ESO 406- G 004                CªQËÂ½ÙC’¦{=£×
+2MASX J22422135-4539093       CªKdÂ6œCA¤ù=£×
+3C 452                        CªºBÀ4CGëó=£×
+2MASX J22484165-5109338       C«öÂL¨ýAŒm=£×
+2MASX J22484430+1727034       C«¤A‹›qB®<=£×
+2MASX J22505170-0854572       C«[”Á§BÏ¾=£×
+MG3 J225155+2217              C«|ˆA²YC(ð=£×
+1RXS J225146.9-320614         C«y:Â j†B—Ò=£×
+3C 454.3                      C«¾ÌA/ƒD=!=£×
+MR 2251-178                   C«ÃÁŒ§»CLß=£×
+UGC 12243                     C«×5A;lôCGëó=£×
+UGC 12237                     C«Ê~A<…Bþ¹5=£×
+AO Psc                        C«é–ÀKb·?ö=£×
+2MASX J22563642+0525167       C¬w@­|xAá0¾=£×
+UGC 12282                     C¬]˜B#¹ÛD6“ =£×
+KAZ 320                       C¬qŒAÇXyCØ¬=£×
+2MASX J23013626-5913210       C¬³UÂlãÞA¤ù=£×
+NGC 7465                      C¬ÀƒAoõC¨¦*=£×
+PKS 2300-18                   C¬á‰Á•…BI#ô=£×
+NGC 7469                      C¬èUAûçBí³=£×
+Mrk 926                       C­.Á
+ø¡CÈ?=£×
+NGC 7479                      C­7AE*ŽCïh,=£×
+PG 2304+042                   C­aŽ@‘“EC´ß=£×
+SWIFT J2307.9+2245            C­zAµ®¦C"PÚ=£×
+2MASX J23075724+4016393       C­~ŠB!)CGëó=£×
+NGC 7582                      C®ÌˆÂ){Cmì=£×
+NGC 7603                      C®Þ2>yÛ#CØ¬=£×
+SWIFT J231930.4+261517        C®ð1AÒ	ÑAN©Ì=£×
+2MASX J23222444-0645375       C¯MÀØVBº«=£×
+LCRS B232242.2-384320         C¯¬çÂÉºCÈ?=£×
+2MASX J23255427+2153142       C¯¼îA¯“CÈ?=£×
+2MASX J23272195+1524375       C¯ë·AvÙAá0¾=£×
+PKS 2325+093                  C¯ñìA´9DÕ'=£×
+NGC 7679                      C°â@`ºÇCNÿ=£×
+PKS 2331-240                  C°½vÁ½ÒÝC÷ö=£×
+1RXS J234015.8+764207         C±‹B™gð@ñ]O=£×
+UGC 12741                     C±½•Aô§‡CeÇ!=£×
+2MASX J23435956+0538233       C±ÿÅ@´z¢Bí³=£×
+2MASX J23444387-4243124       C²hÂ*áeCç&£=£×
+2MASX J23470479+5142179       C²b”BNÑãA]†=£×
+PKS 2349-01                   C²ýï¿“¬´Cïh,=£×
+2MASX J23525143-1704370       C³nÁˆ²Cv[=£×
+H 2356-309                    C³ä8Áõ%BÏ¾=£×
+PKS 2356-61                   C³âTÂsªvCNÿ=£×
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
