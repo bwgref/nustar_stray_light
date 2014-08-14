@@ -6,34 +6,7 @@ pro read_combined_catalog, ra=ra, dec=dec, src_name, src_ra, src_dec, src_flux, 
   Rmin=1.8
   Rmax=5.0
 
-  ;; if(n_elements(slp_level) eq 0) then slp_level=4      
-
-  ;; if(slp_level eq 0) then begin
-  ;;    fmin=0.0
-  ;; endif else if(slp_level eq 0) then begin
-  ;;    fmin=0.0
-  ;; endif else if(slp_level eq 1) then begin
-  ;;    fmin=5.0
-  ;; endif else if(slp_level eq 2) then begin
-  ;;    fmin=10.0
-  ;; endif else if(slp_level eq 3) then begin
-  ;;    fmin=50.0
-  ;; endif else if(slp_level eq 4) then begin
-  ;;    fmin=100.0
-  ;; endif else begin
-  ;;    print,'The max slp_level is 4'
-  ;;    stop
-  ;; endelse
-  ;; if not (n_elements(flxmin) eq 0) then fmin=flxmin      
-
-
-
-
-
-;  cat=getenv('NUPLAN_AUXIL')+'/9year_integral_galsurvey.fits'
-  cat=getenv('NUPLAN_AUXIL')+'/9year_integral_BAT_70m_combined.fits'
-;  cat=getenv('NUPLAN_AUXIL')+'/9year_integral_galsurvey_bg.fits'
-;  cat=getenv('NUPLAN_AUXIL')+'/BAT_58m_catalog_100924.fits.gz'
+  cat='auxil/9year_integral_BAT_70m_combined.fits'
   
   table=readfits(cat,header,EXTEN_NO=1,/SILENT)
   src_name=TBGET(header, table, 'NAME', /NOSCALE)
@@ -48,11 +21,12 @@ pro read_combined_catalog, ra=ra, dec=dec, src_name, src_ra, src_dec, src_flux, 
   src_flag(index)=1L
 
   nsrc=selected
+  openw, lun, /get_lun, 'straylight_sources.txt'
   if(selected eq 0) then begin 
-     print,'No source selected '
+     printf,lun,'No source selected '
      return
   endif else begin
-     print,'Selected ',selected,' sources with 17-60 keV flux above ', fmin,' mCrab'     
+     printf, lun, 'Selected ',selected,' sources with 17-60 keV flux above ', fmin,' mCrab'     
      for t=0L, N_ELEMENTS(src_name)-1 do begin
         if not (src_flag[t] eq 1) then continue
         dist=sphdist(ra, dec, src_ra[t], src_dec[t], /DEGREES)
@@ -60,17 +34,19 @@ pro read_combined_catalog, ra=ra, dec=dec, src_name, src_ra, src_dec, src_flux, 
            src_flag[t]=0
            continue
         endif
-        print,'+',src_name[t],src_flux[t],' mCrab'
+        printf,lun,src_name[t],src_flux[t],' mCrab'
      endfor
-     print
+     printf, lun, ""
   endelse
   goodones = where(src_flag eq 1, ngood)
-  if ngood eq 0 then message, 'No stray light targets qualify!'
-  src_flag = src_flag[goodones]
-  src_ra=src_ra[goodones]
-  src_dec=src_dec[goodones]
-  src_flux=src_flux[goodones]
-  src_name=src_name[goodones]
-
+  if ngood eq 0 then begin
+     message, 'No stray light targets qualify!'
+  endif else begin
+     src_flag = src_flag[goodones]
+     src_ra=src_ra[goodones]
+     src_dec=src_dec[goodones]
+     src_flux=src_flux[goodones]
+     src_name=src_name[goodones]
+  endelse
 
 end

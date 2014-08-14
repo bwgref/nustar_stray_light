@@ -32,11 +32,7 @@ pro stray_light_render, badpix=badpix
   dmask_fp2=fltarr(n_detx, n_dety) 
   
                                 ; (BG) Removed as out of date.
-  ;; file_delete,'slp_'+status.key+'_fpA_raw.reg',/ALLOW_NONEXISTENT
-  ;; file_delete,'slp_'+status.key+'_fpB_raw.reg',/ALLOW_NONEXISTENT
-  ;; file_delete,'slp_'+status.key+'_fpA_sky.reg',/ALLOW_NONEXISTENT
-  ;; file_delete,'slp_'+status.key+'_fpB_sky.reg',/ALLOW_NONEXISTENT
-
+ 
   if (status.silent ne 1) then  print, 'i, name, RA [deg], DEC [deg], OAA [deg], AZ [deg], Flux (mCrab) ='
   for ii=0, n_src-1 do begin 
      if(sources.src_flag[ii] eq 0) then continue
@@ -72,42 +68,10 @@ pro stray_light_render, badpix=badpix
 
 
 
-        ;; if (sources.src_flag[ii] ge 1 and status.smooth ge 1) then begin
-        
-        ;;    smooth_factor=sources.src_flag[ii]
-        ;;    if(status.smooth gt 1) then smooth_factor=status.smooth
-
-        ;;    dmask0_fp1s=smooth(dmask0_fp1,smooth_factor,/EDGE_TRUNCATE)
-        ;;    index=where(dmask0_fp1s gt 0.01, cnt)
-        ;;    if(cnt gt 0) then dmask0_fp1(index)=1
-
-        ;;    dmask0_fp2s=smooth(dmask0_fp2,smooth_factor,/EDGE_TRUNCATE)
-        ;;    index=where(dmask0_fp2s gt 0.01, cnt)
-        ;;    if(cnt gt 0) then dmask0_fp2(index)=1
-
-        ;;    writefits, 'dmask_fpA_sm.fits',dmask0_fp1s,hdr
-        ;;    writefits, 'dmask_fpB_sm.fits',dmask0_fp2s,hdr
-        ;; endif else begin
-;           endelse
-
         
         Contour, dmask0_fp1, PATH_INFO=info, PATH_XY=xy, XSTYLE=1, YSTYLE=1, /PATH_DATA_COORDS, /CLOSED, /NLEVELS
         if(n_elements(xy) gt 0) then begin
-           ;; openw,1,'slp_'+status.key+'_fpA_raw.reg',/APPEND
-           ;; printf,1,'image; polygon(',format='(a, $)' 
-           ;; openw,2,'slp_'+status.key+'_fpA_sky.reg',/APPEND
-           ;; printf,2,'fk5; polygon(',format='(a, $)' 
-           ;; for t=0,n_elements(xy[0,*])-1 do begin
-           ;;    xpix=xy[0,t]+1.
-           ;;    ypix=xy[1,t]+1.
-           ;;    printf,1,xpix,',',ypix,format='(f12.4,a,f12.4, $)' 
-           ;;    xy2ad,xpix-1.,ypix-1.,astra,ra,dec
-           ;;    printf,2,ra,',',dec,format='(f12.4,a,f12.4,a, $)' 
-           ;; endfor
-           ;; printf,1,') # color=cyan width=3 text={'+sources.src_name(ii)+'}'
-           ;; printf,2,') # color=cyan width=3 text={'+sources.src_name(ii)+'}'
-           ;; close,1
-           ;; close,2
+ 
 ; (BG) Construct labels for plotting below
            label_x = mean(xy[0, *])
            label_y = mean(xy[1, *])
@@ -120,21 +84,6 @@ pro stray_light_render, badpix=badpix
 
         Contour, dmask0_fp2, PATH_INFO=info, PATH_XY=xy, XSTYLE=1, YSTYLE=1, /PATH_DATA_COORDS, /CLOSED, /NLEVELS
         if(n_elements(xy) gt 0) then begin
-           ;; openw,1,'slp_'+status.key+'_fpB_raw.reg',/APPEND
-           ;; printf,1,'image; polygon(',format='(a, $)' 
-           ;; openw,2,'slp_'+status.key+'_fpB_sky.reg',/APPEND
-           ;; printf,2,'fk5; polygon(',format='(a, $)' 
-           ;; for t=0,n_elements(xy[0,*])-1 do begin
-           ;;    xpix=xy[0,t]+1.
-           ;;    ypix=xy[1,t]+1.
-           ;;    printf,1,xpix,',',ypix,format='(f12.4,a,f12.4, $)' 
-           ;;    xy2ad,xpix-1.,ypix-1.,astrb,ra,dec
-           ;;    printf,2,ra,',',dec,format='(f12.4,a,f12.4,a, $)' 
-           ;; endfor
-           ;; printf,1,') # color=cyan width=3 text={'+sources.src_name(ii)+'}'
-           ;; printf,2,') # color=cyan width=3 text={'+sources.src_name(ii)+'}'
-           ;; close,1
-           ;; close,2
 
 ; (BG) Dittor for FPMB:
            label_x = mean(xy[0, *])
@@ -154,63 +103,6 @@ pro stray_light_render, badpix=badpix
   endfor
 
 
-;;  if(1) then begin 
-                                ; find index of the OA given in mm
-                                ;get_oa,nu.oa, pos=oa_index
-     ;; make_header_nustar, status.ra, status.dec, pa, astr=astr, hdr=hdr, bitpix=4, oa=mm2det(nu.oa)
-     ;; make_header_nustar, status.ra, status.dec, pa, astr=astra, hdr=hdra, bitpix=4, oa=mm2det(nu.oaa)
-     ;; make_header_nustar, status.ra, status.dec, pa, astr=astrb, hdr=hdrb, bitpix=4, oa=mm2det(nu.oab)
-                                ;ad2xy,status.ra, status.dec, astr, oax,oay
-                                ;print,'mm2det:',mm2det(nu.oa[0]),mm2det(nu.oa[1])
-                                ;print,'OA position and index',nu.oa[0],nu.oa[1],' ->',oax,oay
-     ;; print,'Saving SLP sources to slp_sources.reg'
-     ;; openw, lun,  'slp_sources.reg', /get_lun
-     ;; for ii=0, n_src-1 do begin 
-     ;;    if(sources.src_flag[ii] eq 0) then continue
-     ;;    printf,lun,'fk5; circle( ',$
-     ;;           sources.src_ra(ii),', ',sources.src_dec(ii),', 0.15 ) # text={'+sources.src_name(ii)+'}'
-     ;; endfor
-     ;; close, lun
-     ;; free_lun, lun
-
-                                ; check is there hotpix matrix
-     ;; filesav='stack_hotpix.sav'
-     ;; if(file_test(filesav)) then begin
-     ;;    RESTORE, filesav
-     ;;    dmask_fp1+=hotpix_raw[*,*,0]
-     ;;    dmask_fp2+=hotpix_raw[*,*,1]
-     ;; endif
-
-                                ; check is there badpix-region matrix
-     ;; filesav='region_badpix.sav'
-     ;; if(file_test(filesav)) then begin
-     ;;    print,'stray_light_render: RESTORE ',filesav
-     ;;    RESTORE, filesav
-     ;;    dmask_fp1+=hotpix_raw[*,*,0]
-     ;;    dmask_fp2+=hotpix_raw[*,*,1]
-     ;;    writefits,'masked_RAW_tot.fpA.img',dmask_fp1
-     ;;    writefits,'masked_RAW_tot.fpB.img',dmask_fp2
-     ;; endif
-
-     ;; print,'Saving dmask_fp[A,B].fits'
-     ;; dmask_fp1[5,34]+=1
-     ;; dmask_fp1[5,35]+=1
-     ;; dmask_fp1[5,33]+=1
-     ;; dmask_fp1[4,34]+=1
-     ;; dmask_fp1[6,34]+=1
-     ;; writefits, 'dmask_fpA.fits',dmask_fp1,hdra
-     ;; writefits, 'dmask_fpB.fits',dmask_fp2,hdrb
-     
-                                ; make user-defined badpixel matrix
-     ;; if(badpix eq 1) then begin
-     ;;    print,"Run badpix code. Is Brian's code ready to use?"
-     ;;    make_badpix,dmask_fp1,dmask_fp2
-     ;;    ;; Stupid, but what we can do? The static name of this file
-     ;;    ;; emerges from Brian's script.
-     ;;    FILE_MOVE, 'nuAuserbadpix20100101v002.fits', 'nuAuserbadpix20100101v002.'+status.key+'.fits', /NOEXPAND_PATH, /OVERWRITE
-     ;;    FILE_MOVE, 'nuBuserbadpix20100101v002.fits', 'nuBuserbadpix20100101v002.'+status.key+'.fits', /NOEXPAND_PATH, /OVERWRITE
-     ;; endif
-;;  endif
 
   index=where(dmask_fp1 gt 0.0,count)
   fp1_pct=0.0
@@ -228,32 +120,6 @@ pro stray_light_render, badpix=badpix
   fp2chip0_pct=0.0
   if(count gt 0) then fp2chip0_pct=count*100.0/32.^2
 
-
-
-
-;; index=where(dmask(0:31,0:31) gt 0.0,count)
-;; fp1chip2_pct=0.0
-;; if(count gt 0) then fp1chip2_pct=count*100.0/32.^2
-;; index=where(dmask(0:31,32:63) gt 0.0,count)
-;; fp1chip1_pct=0.0
-;; if(count gt 0) then fp1chip1_pct=count*100.0/32.^2
-;; index=where(dmask(32:63,0:31) gt 0.0,count)
-;; fp1chip3_pct=0.0
-;; if(count gt 0) then fp1chip3_pct=count*100.0/32.^2
-;; index=where(dmask(64:95,0:31) gt 0.0,count)
-;; fp2chip2_pct=0.0
-;; if(count gt 0) then fp2chip2_pct=count*100.0/32.^2
-;; index=where(dmask(64:95,32:63) gt 0.0,count)
-;; fp2chip1_pct=0.0
-;; if(count gt 0) then fp2chip1_pct=count*100.0/32.^2
-;; index=where(dmask(96:127,0:31) gt 0.0,count)
-;; fp2chip3_pct=0.0
-;; if(count gt 0) then fp2chip3_pct=count*100.0/32.^2
-;; fp1or2_pct=0.0
-;; index=where (dmask_fp1 eq 0.0 or dmask_fp2 eq 0.0, count)
-;; if(count gt 0) then fp1or2_pct=count*100.0/64.^2
-
-
   if(status.silent ne 1) then begin
      print, 'Det0 Loss (%), FPMA, FPMB: ', fp1chip0_pct, fp2chip0_pct
      print, 'All Dets Loss (%): FPA, FPB:', fp1_pct, fp2_pct
@@ -267,11 +133,7 @@ pro stray_light_render, badpix=badpix
   if(count gt 0) then vis=count*100.0/64.^2
 
   eff=(100-fp1_pct)+(100-fp2_pct)
-  ;; Label = widget_info(status.mainid, find_by_uname='infotext') 
-  ;; widget_control,Label,set_value= $
-  ;;                'Efficiency: '+cgNumber_Formatter(eff,Decimals=1)+ $
-  ;;                '% Visibility: '+cgNumber_Formatter(vis,Decimals=1)+ '%'
-  status.vis=vis
+
   status.eff=eff
   status.slpa=fp1_pct
   status.slpb=fp2_pct
