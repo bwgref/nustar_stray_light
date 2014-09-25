@@ -8,7 +8,7 @@ PRO ENDPS
   set_plot,'x'
   set_ps_plot=0
 ;  print,'/users/bwgref/bin/ps2pdf_idl.sh '+outps+' '+outpdf
-  spawn,'ps2pdf_idl.sh '+outps+' '+outpdf
+  spawn,'./ps2pdf_idl.sh '+outps+' '+outpdf
   spawn, 'rm '+outps
   !p.multi=0
   
