@@ -3,7 +3,7 @@ pro read_combined_catalog, ra=ra, dec=dec, src_name, src_ra, src_dec, src_flux, 
   ; fmin in mCrab
   if n_elements(fmin) eq 0 then fmin = 0. 
 
-  Rmin=1.8
+  Rmin=0.
   Rmax=5.0
 
   cat='auxil/9year_integral_BAT_70m_combined.fits'
@@ -34,7 +34,7 @@ pro read_combined_catalog, ra=ra, dec=dec, src_name, src_ra, src_dec, src_flux, 
            src_flag[t]=0
            continue
         endif
-        printf,lun,src_name[t],src_flux[t],' mCrab'
+        printf,lun,src_name[t],src_flux[t],' mCrab   ', dist, ' degrees away'
      endfor
      printf, lun, ""
   endelse
