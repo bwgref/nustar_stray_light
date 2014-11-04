@@ -143,6 +143,9 @@ pro stray_light_render, badpix=badpix
   !p.multi=[0,2,1]
   !p.charsize=1.25
   bb=20.0
+  sources.src_flux = sources.src_flux+randomu(seed, n_elements(sources.src_flux))* 0.001
+
+
   contour, /iso, dmask_fp1, nu.xpos_array, nu.ypos_array, /cell_fill, xtit='DETX [mm]', ytit='DETY [mm]', $
            tit='FPA ', $
            levels=sources.src_flux[sort(sources.src_flux)] ; (BG) Contour levesl == source fluxes.
