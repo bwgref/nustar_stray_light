@@ -140,14 +140,15 @@ common nuplan, nu, status, sources, target
   status={ra:pnt_ra, dec:pnt_dec, ra_orig:pnt_ra, dec_orig:pnt_dec, pa:pnt_pa,$
           slpa:0,slpb:0,eff:0,vis:0,winid:0,mainid:0,infoid:0,TopTab:0,table:0,$
           infotext:0,silent:silent,scan_step:scan_step, key:key, smooth:smooth, $
-          loss0:0., loss1:0.}
+          loss0:0., loss1:0., ghost_ray:0.}
   nu={hgap:hgap,n_detx:n_detx,n_dety:n_dety,xpos_array:xpos_array,ypos_array:ypos_array,oa:oa,oaa:oaa,oab:oab,oa_prev:oa,fov_shift_x:0.0D,fov_shift_y:0.0D,fov_shift_step:0.5D,dr:!PI/180.,rd:180./!PI}
 
 ; Read in the combined BAT 70 Month and INTEGRAL galactic plane survey catalogs
-  read_combined_catalog, ra=pnt_ra, dec=pnt_dec, src_name, src_ra, src_dec, src_flux, src_flag, $
-                         fmin=fmin
-  
-  sources={src_name:src_name,src_ra:src_ra,src_dec:src_dec,src_flux:src_flux,src_flag:src_flag}
+;  read_combined_catalog, ra=pnt_ra, dec=pnt_dec, src_name, src_ra, src_dec, src_flux, src_flag, $
+;                         fmin=fmin
+  read_3to30_catalog, ra = pnt_ra, dec =pnt_dec, src_name, src_ra, src_dec, src_flux, src_flag, $
+                      int_src, fmin = fmin
+  sources={src_name:src_name,src_ra:src_ra,src_dec:src_dec,src_flux:src_flux,src_flag:src_flag,int_src:int_src}
 
 
   if ~keyword_set(do_scan) then begin
@@ -157,8 +158,8 @@ common nuplan, nu, status, sources, target
 ;   print,'Running PA scan 0,360,5 deg'
      openw, lun,  'pa_scan.dat', /get_lun
                                 ; save source list used in this run
-     for ii=0, n_elements(sources.src_name)-1 do printf,lun,'# ',$
-        sources.src_name(ii),',',sources.src_ra(ii),', ',sources.src_dec(ii),',',sources.src_flag(ii)
+;     for ii=0, n_elements(sources.src_name)-1 do printf,lun,'# ',$
+;        sources.src_name(ii),',',sources.src_ra(ii),', ',sources.src_dec(ii),',',sources.src_flag(ii)
      save_pa=status.pa
      save_silent=status.silent
      status.silent=1
