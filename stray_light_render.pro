@@ -76,6 +76,7 @@ pro stray_light_render, badpix=badpix
            label_x = mean(xy[0, *])
            label_y = mean(xy[1, *])
            this_src_name = sources.src_name[ii]
+           push, flux1, sources.src_flux[ii]
            push, labels1_x, label_x
            push, labels1_y, label_y
            push, labels1_name, this_src_name
@@ -85,10 +86,11 @@ pro stray_light_render, badpix=badpix
         Contour, dmask0_fp2, PATH_INFO=info, PATH_XY=xy, XSTYLE=1, YSTYLE=1, /PATH_DATA_COORDS, /CLOSED, /NLEVELS
         if(n_elements(xy) gt 0) then begin
 
-; (BG) Dittor for FPMB:
+; (BG) Ditto for FPMB:
            label_x = mean(xy[0, *])
            label_y = mean(xy[1, *])
            this_src_name = sources.src_name[ii]
+           push, flux2, sources.src_flux[ii]
            push, labels2_x, label_x
            push, labels2_y, label_y
            push, labels2_name, this_src_name
@@ -142,15 +144,33 @@ pro stray_light_render, badpix=badpix
 
   !p.multi=[0,2,1]
   !p.charsize=1.25
+  !p.color = cgcolor('black')
+  !p.background = cgColor('White')
   bb=20.0
   sources.src_flux = sources.src_flux+randomu(seed, n_elements(sources.src_flux))* 0.001
+  position = [0.1, 0.1, 0.4, 0.5]
+;  cgloadct, 0, ncolors = n_elements(sources.src_flux)+1, bottom = 0, /reverse
+;  c_colors = indgen(n_elements(sources.src_flux)+1)
+
+  if max(dmask_fp1) gt 0 then begin
+
+     cgloadct, 0, ncolors = n_elements(flux1)+1, bottom = 0, /reverse
+     c_colors = indgen(n_elements(flux1)+1)
+
+     cgcontour, dmask_fp1, nu.xpos_array, nu.ypos_array, /cell_fill, xtit='DETX [mm]', ytit='DETY [mm]', $
+                tit='FPA ', /closed, c_colors = c_colors,nlevels = n_elements(flux1)+1, position = position
+  endif else plot, nu.xpos_array, nu.ypos_array, /nodata, xtit='DETX [mm]', ytit='DETY [mm]', $
+                    tit='FPA ', position=position
+  
 
 
-  contour, /iso, dmask_fp1, nu.xpos_array, nu.ypos_array, /cell_fill, xtit='DETX [mm]', ytit='DETY [mm]', $
-           tit='FPA ', $
-           levels=sources.src_flux[sort(sources.src_flux)] ; (BG) Contour levesl == source fluxes.
+
+;$
+;           levels=[-1, sources.src_flux[sort(sources.src_flux)], max(sources.src_flux)*1.5] ; (BG) Contour levesl == source fluxes.
                                 ;,levels=[0,1,2,3,4]
                                 ;tit='FPA '+'(SLP '+string(fp1_pct, format='(f4.0)')+'%)',levels=[0,1,2,3,4]
+
+
 
   oplot, [nu.oa[0]], [nu.oa[1]], psym=2    
   oplot, [hgap,hgap], [-bb,bb], linestyle=0
@@ -160,7 +180,11 @@ pro stray_light_render, badpix=badpix
                                 ;xyouts, 1. , 17., 'chip0: '+string(fp1chip0_pct, format='(f4.0)')+'%'
                                 ;xyouts, 1. , -3., 'chip3: '+string(fp1chip3_pct, format='(f4.0)')+'%'
                                 ;xyouts, -18. , -3., 'chip2: '+string(fp1chip2_pct, format='(f4.0)')+'%'
-                                ;xyouts, -18. , 17., 'chip1: '+string(fp1chip1_pct, format='(f4.0)')+'%'
+                                ;xyouts, -18. , 17., 'chip1:
+                                ;'+string(fp1chip1_pct,
+                                ;format='(f4.0)')+'%'
+
+
 ; (BG) Add labels:
   if n_elements(labels1_name) gt 0 then begin
      for ll = 0, n_elements(labels1_x)-1 do begin
@@ -200,9 +224,24 @@ pro stray_light_render, badpix=badpix
      xyouts, ptx[n]+3.0 , pty[n], String(off[n],format='(f3.1)')+"'", CHARSIZE=0.9, color=green
   endfor
 
-  contour, /iso, dmask_fp2, nu.xpos_array, nu.ypos_array, /cell_fill, xtit='DETX [mm]', ytit='DETY [mm]', $
-           tit='FPB ', $
-           levels=sources.src_flux[sort(sources.src_flux)] ; (BG) Contour levesl == source fluxes.
+
+  position = [0.6, 0.1, 0.9, 0.5]
+
+  if max(dmask_fp2) gt 0 then begin
+     cgloadct, 0, ncolors = n_elements(flux2)+1, bottom = 0, /reverse
+     c_colors = indgen(n_elements(flux2)+1)
+
+     cgcontour, dmask_fp2, nu.xpos_array, nu.ypos_array, /cell_fill, xtit='DETX [mm]', ytit='DETY [mm]', $
+                tit='FPB ', position=position,  /closed, c_colors = c_colors,nlevels = n_elements(sources)+1
+  endif else plot, nu.xpos_array, nu.ypos_array, /nodata, xtit='DETX [mm]', ytit='DETY [mm]', $
+                    tit='FPB ', position=position
+
+
+
+
+;  contour, /iso, dmask_fp2, nu.xpos_array, nu.ypos_array, /cell_fill, xtit='DETX [mm]', ytit='DETY [mm]', $
+;           tit='FPB ', $
+;           levels=sources.src_flux[sort(sources.src_flux)] ; (BG) Contour levesl == source fluxes.
                                 ;levels=[0,1,2,3,4]
                                 ;tit='FPB '+'(SLP '+string(fp2_pct,format='(f4.0)')+'%)',levels=[0,1,2,3,4]
 
