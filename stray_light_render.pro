@@ -83,8 +83,9 @@ pro stray_light_render, badpix=badpix
            
         endif
 
+        undefine, xy
         Contour, dmask0_fp2, PATH_INFO=info, PATH_XY=xy, XSTYLE=1, YSTYLE=1, /PATH_DATA_COORDS, /CLOSED, /NLEVELS
-        if(n_elements(xy) gt 0) then begin
+        if(total(dmask0_fp2) gt 0) then begin
 
 ; (BG) Ditto for FPMB:
            label_x = mean(xy[0, *])
@@ -94,6 +95,13 @@ pro stray_light_render, badpix=badpix
            push, labels2_x, label_x
            push, labels2_y, label_y
            push, labels2_name, this_src_name
+
+           
+           ;; index=where(dmask0_fp2 gt 0.0,count)
+           ;; print, '' 
+           ;; print, this_src_name, count * 100.0 / 64.^2
+           ;; print, ''
+           ;; stop
 
 
         endif
@@ -154,11 +162,19 @@ pro stray_light_render, badpix=badpix
 
   if max(dmask_fp1) gt 0 then begin
 
-     cgloadct, 0, ncolors = n_elements(flux1)+1, bottom = 0, /reverse
+     
+     cgloadct, 0, /reverse
+     cgloadct, 0, ncolors = n_elements(flux1+1), clip=[50, 200], /reverse, bottom = 1
      c_colors = indgen(n_elements(flux1)+1)
+     flux1 += randomu(seed, n_elements(flux1))*0.001
+
+
+     flux_levels = flux1[sort(flux1)]
 
      cgcontour, dmask_fp1, nu.xpos_array, nu.ypos_array, /cell_fill, xtit='DETX [mm]', ytit='DETY [mm]', $
-                tit='FPA ', /closed, c_colors = c_colors,nlevels = n_elements(flux1)+1, position = position
+                tit='FPB ', position=position,  /closed, c_colors = c_colors, levels = [0, flux_levels-0.01]
+
+
   endif else plot, nu.xpos_array, nu.ypos_array, /nodata, xtit='DETX [mm]', ytit='DETY [mm]', $
                     tit='FPA ', position=position
   
@@ -228,11 +244,18 @@ pro stray_light_render, badpix=badpix
   position = [0.6, 0.1, 0.9, 0.5]
 
   if max(dmask_fp2) gt 0 then begin
-     cgloadct, 0, ncolors = n_elements(flux2)+1, bottom = 0, /reverse
+     cgloadct, 0, /reverse
+     cgloadct, 0, ncolors = n_elements(flux2), clip=[50, 200], /reverse, bottom = 1
      c_colors = indgen(n_elements(flux2)+1)
+     flux2 += randomu(seed, n_elements(flux2))*0.001
+
+     flux_levels = flux2[sort(flux2)]
 
      cgcontour, dmask_fp2, nu.xpos_array, nu.ypos_array, /cell_fill, xtit='DETX [mm]', ytit='DETY [mm]', $
-                tit='FPB ', position=position,  /closed, c_colors = c_colors,nlevels = n_elements(sources)+1
+                tit='FPB ', position=position,  /closed, c_colors = c_colors, levels = [0, flux_levels-0.01]
+
+
+
   endif else plot, nu.xpos_array, nu.ypos_array, /nodata, xtit='DETX [mm]', ytit='DETY [mm]', $
                     tit='FPB ', position=position
 
