@@ -146,9 +146,13 @@ common nuplan, nu, status, sources, target
 ; Read in the combined BAT 70 Month and INTEGRAL galactic plane survey catalogs
 ;  read_combined_catalog, ra=pnt_ra, dec=pnt_dec, src_name, src_ra, src_dec, src_flux, src_flag, $
 ;                         fmin=fmin
-  read_3to30_catalog, ra = pnt_ra, dec =pnt_dec, src_name, src_ra, src_dec, src_flux, src_flag, $
-                      int_src, fmin = fmin
-  sources={src_name:src_name,src_ra:src_ra,src_dec:src_dec,src_flux:src_flux,src_flag:src_flag,int_src:int_src}
+;  read_3to30_catalog, ra = pnt_ra, dec =pnt_dec, src_name, src_ra, src_dec, src_flux, src_flag, $
+;                      int_src, fmin = fmin
+;  sources={src_name:src_name,src_ra:src_ra,src_dec:src_dec,src_flux:src_flux,src_flag:src_flag,int_src:int_src}
+  read_bat_5mcrab_catalog, ra = pnt_ra, dec =pnt_dec, src_name, src_ra, src_dec, src_flux, src_flag, $
+                           fmin = fmin
+  sources={src_name:src_name,src_ra:src_ra,src_dec:src_dec,src_flux:src_flux,src_flag:src_flag}
+
 
 
   if ~keyword_set(do_scan) then begin
