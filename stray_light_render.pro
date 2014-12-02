@@ -172,11 +172,11 @@ pro stray_light_render, badpix=badpix
      flux_levels = flux1[sort(flux1)]
 
      cgcontour, dmask_fp1, nu.xpos_array, nu.ypos_array, /cell_fill, xtit='DETX [mm]', ytit='DETY [mm]', $
-                tit='FPB ', position=position,  /closed, c_colors = c_colors, levels = [0, flux_levels-0.01]
+                tit='FPMA ', position=position,  /closed, c_colors = c_colors, levels = [0, flux_levels-0.01]
 
 
   endif else plot, nu.xpos_array, nu.ypos_array, /nodata, xtit='DETX [mm]', ytit='DETY [mm]', $
-                    tit='FPA ', position=position
+                    tit='FPMA ', position=position
   
 
 
@@ -252,12 +252,12 @@ pro stray_light_render, badpix=badpix
      flux_levels = flux2[sort(flux2)]
 
      cgcontour, dmask_fp2, nu.xpos_array, nu.ypos_array, /cell_fill, xtit='DETX [mm]', ytit='DETY [mm]', $
-                tit='FPB ', position=position,  /closed, c_colors = c_colors, levels = [0, flux_levels-0.01]
+                tit='FPMB ', position=position,  /closed, c_colors = c_colors, levels = [0, flux_levels-0.01]
 
 
 
   endif else plot, nu.xpos_array, nu.ypos_array, /nodata, xtit='DETX [mm]', ytit='DETY [mm]', $
-                    tit='FPB ', position=position
+                    tit='FPMB ', position=position
 
 
 
