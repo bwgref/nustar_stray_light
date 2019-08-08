@@ -92,7 +92,7 @@ common nuplan, nu, status, sources, target
   if(n_elements(quit) eq 0) then quit=0
   if n_elements(fmin) eq 0 then fmin = 5. ; default to 5 mCrab 
   if keyword_set(do_scan) then pnt_pa = 0
-  if keyword_set(save_image) then save_image = 1
+  if keyword_set(save_image) then save_image = 1 ELSE save_image = 0
 
   target={src_name:[''],src_ra:[0.0],src_dec:[0.0],src_flag:[0],index:[1]}
 
@@ -141,23 +141,30 @@ common nuplan, nu, status, sources, target
   status={ra:pnt_ra, dec:pnt_dec, ra_orig:pnt_ra, dec_orig:pnt_dec, pa:pnt_pa,$
           slpa:0,slpb:0,eff:0,vis:0,winid:0,mainid:0,infoid:0,TopTab:0,table:0,$
           infotext:0,silent:silent,scan_step:scan_step, key:key, smooth:smooth, $
-          loss0:0., loss1:0., ghost_ray:0., save_image:save_image)
+          loss0:0., loss1:0., ghost_ray:0., save_image:save_image}
   nu={hgap:hgap,n_detx:n_detx,n_dety:n_dety,xpos_array:xpos_array,ypos_array:ypos_array,oa:oa,oaa:oaa,oab:oab,oa_prev:oa,fov_shift_x:0.0D,fov_shift_y:0.0D,fov_shift_step:0.5D,dr:!PI/180.,rd:180./!PI}
 
 ; Read in the combined BAT 70 Month and INTEGRAL galactic plane survey catalogs
-;  read_combined_catalog, ra=pnt_ra, dec=pnt_dec, src_name, src_ra, src_dec, src_flux, src_flag, $
-;                         fmin=fmin
+  read_combined_catalog, ra=pnt_ra, dec=pnt_dec, src_name, src_ra, src_dec, src_flux, src_flag, $
+                         fmin=fmin
 ;  read_3to30_catalog, ra = pnt_ra, dec =pnt_dec, src_name, src_ra, src_dec, src_flux, src_flag, $
 ;                      int_src, fmin = fmin
 ;  sources={src_name:src_name,src_ra:src_ra,src_dec:src_dec,src_flux:src_flux,src_flag:src_flag,int_src:int_src}
-  read_bat_5mcrab_catalog, ra = pnt_ra, dec =pnt_dec, src_name, src_ra, src_dec, src_flux, src_flag, $
-                           fmin = fmin
+;  read_bat_5mcrab_catalog, ra = pnt_ra, dec =pnt_dec, src_name, src_ra, src_dec, src_flux, src_flag, $
+;                           fmin = fmin
   sources={src_name:src_name,src_ra:src_ra,src_dec:src_dec,src_flux:src_flux,src_flag:src_flag}
 
 
 
-  if ~keyword_set(do_scan) then begin
+  if ~keyword_set(do_scan) then BEGIN
+     IF status.save_image THEN setps
+     
      stray_light_render, badpix=badpix
+
+     IF status.save_image THEN BEGIN
+        endps
+        spawn, 'mv idlout.pdf stray_light.pdf'
+     endif
   endif else begin
 
 ;   print,'Running PA scan 0,360,5 deg'

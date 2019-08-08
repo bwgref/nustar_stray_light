@@ -174,8 +174,6 @@ pro stray_light_render, badpix=badpix
      cgcontour, dmask_fp1, nu.xpos_array, nu.ypos_array, /cell_fill, xtit='DETX [mm]', ytit='DETY [mm]', $
                 tit='FPMA ', position=position,  /closed, c_colors = c_colors, levels = [0, flux_levels-0.01]
 
-    if status.save_image == 1 then $
-        save, dmask_fp1, file = 'stray_light_fpma.sav'
 
   endif else plot, nu.xpos_array, nu.ypos_array, /nodata, xtit='DETX [mm]', ytit='DETY [mm]', $
                     tit='FPMA ', position=position
@@ -257,14 +255,16 @@ pro stray_light_render, badpix=badpix
                 tit='FPMB ', position=position,  /closed, c_colors = c_colors, levels = [0, flux_levels-0.01]
 
     
-    if status.save_image == 1 then $
-        save, dmask_fp2, file = 'stray_light_fpmb.sav'
 
   endif else plot, nu.xpos_array, nu.ypos_array, /nodata, xtit='DETX [mm]', ytit='DETY [mm]', $
                     tit='FPMB ', position=position
 
 
+  
+  IF status.save_image EQ 1 THEN $
+     save, dmask_fp1, dmask_fp2, nu, file ='stray_light_image.sav'
 
+  
 
 ;  contour, /iso, dmask_fp2, nu.xpos_array, nu.ypos_array, /cell_fill, xtit='DETX [mm]', ytit='DETY [mm]', $
 ;           tit='FPB ', $
