@@ -77,7 +77,7 @@ end
 
 pro nustar_stray_light, pnt_ra, pnt_dec, pa=pnt_pa , stray_catalog=stray_catalog, oa=oa, oaa=oaa, oab=oab, smooth=smooth, $
             silent=silent, quit=quit, target_catalog=target_catalog, scan_step=scan_step, badpix=badpix, $
-            key=key,slp_level=slp_level, fmin=fmin, do_scan = do_scan
+            key=key,slp_level=slp_level, fmin=fmin, do_scan = do_scan, save_image = save_image
 common nuplan, nu, status, sources, target
   forward_function read_combined_catalog
 
@@ -92,6 +92,7 @@ common nuplan, nu, status, sources, target
   if(n_elements(quit) eq 0) then quit=0
   if n_elements(fmin) eq 0 then fmin = 5. ; default to 5 mCrab 
   if keyword_set(do_scan) then pnt_pa = 0
+  if keyword_set(save_image) then save_image = 1
 
   target={src_name:[''],src_ra:[0.0],src_dec:[0.0],src_flag:[0],index:[1]}
 
@@ -140,7 +141,7 @@ common nuplan, nu, status, sources, target
   status={ra:pnt_ra, dec:pnt_dec, ra_orig:pnt_ra, dec_orig:pnt_dec, pa:pnt_pa,$
           slpa:0,slpb:0,eff:0,vis:0,winid:0,mainid:0,infoid:0,TopTab:0,table:0,$
           infotext:0,silent:silent,scan_step:scan_step, key:key, smooth:smooth, $
-          loss0:0., loss1:0., ghost_ray:0.}
+          loss0:0., loss1:0., ghost_ray:0., save_image:save_image)
   nu={hgap:hgap,n_detx:n_detx,n_dety:n_dety,xpos_array:xpos_array,ypos_array:ypos_array,oa:oa,oaa:oaa,oab:oab,oa_prev:oa,fov_shift_x:0.0D,fov_shift_y:0.0D,fov_shift_step:0.5D,dr:!PI/180.,rd:180./!PI}
 
 ; Read in the combined BAT 70 Month and INTEGRAL galactic plane survey catalogs
